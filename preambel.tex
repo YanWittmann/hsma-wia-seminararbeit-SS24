@@ -1,0 +1,55 @@
+% Hier muss normalerweise nichts angepasst werden
+\usepackage[utf8]{inputenx}
+\usepackage[pdftex]{graphicx}
+\DeclareGraphicsExtensions{.pdf,.jpeg,.jpg,.png}
+\usepackage[cmex10]{amsmath}
+\usepackage{algorithmic}
+\usepackage{array}
+\usepackage{url}
+\usepackage[autostyle=true,german=quotes]{csquotes}
+\usepackage[
+            backref,
+            sorting=none,   % Keine Sortierung
+            doi=true,       % DOI anzeigen
+            isbn=false,     % ISBN nicht anzeigen
+            url=true,       % URLs anzeigen
+            maxnames=6,     % Ab 6 Autoren et al. verwenden
+            minnames=1,     % und nur den ersten Autor angeben
+            style=ieee,
+            sorting=nyt]{biblatex}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{listings}             % Source Code listings
+\usepackage[printonlyused]{acronym}
+\usepackage{fancyvrb}
+\usepackage{tocloft} % Schönere Inhaltsverzeichnisse
+
+%\usepackage[ngerman]{betababel}
+\usepackage[german]{babel}
+
+%\DefineBibliographyStrings{ngerman}{
+\DefineBibliographyStrings{german}{
+    andothers = {{et al\adddot}},  % Immer et al. sagen, auch bei Deutsch als Sprache
+}
+\usepackage[
+      unicode=true,
+      hypertexnames=false,
+      colorlinks=true,
+      linkcolor=black,
+      citecolor=black,
+      urlcolor=black,
+      pdfpagelabels,
+   ]{hyperref}
+
+\hypersetup{
+    pdftitle={\dokumententitel},
+    pdfauthor={\autoren},
+    pdfdisplaydoctitle=true
+}
+
+% Makros für typographisch korrekte Abkürzungen
+\newcommand{\zb}[0]{z.\,B.}
+\newcommand{\dahe}[0]{d.\,h.}
+\newcommand{\ua}[0]{u.\,a.}
+
+
