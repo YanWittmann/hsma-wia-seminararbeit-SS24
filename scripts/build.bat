@@ -24,12 +24,6 @@ if "%NO_BIBER%" == "true" (
   goto :skip_biber
 )
 
-pdflatex seminararbeit.tex
-if errorlevel 1 (
-  echo Error occurred during second pdflatex compilation. Exiting.
-  exit /b 1
-)
-
 rem Run Biber to process the bibliography
 biber seminararbeit
 if errorlevel 1 (
@@ -41,6 +35,12 @@ rem Compile the seminararbeit again with pdflatex to incorporate the bibliograph
 pdflatex seminararbeit.tex
 if errorlevel 1 (
   echo Error occurred during third pdflatex compilation. Exiting.
+  exit /b 1
+)
+
+pdflatex seminararbeit.tex
+if errorlevel 1 (
+  echo Error occurred during second pdflatex compilation. Exiting.
   exit /b 1
 )
 

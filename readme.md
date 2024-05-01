@@ -12,8 +12,8 @@ Ansonsten können auch einfach diese Befehle ausgeführt werden:
 
 ```bash
 pdflatex seminararbeit
-pdflatex seminararbeit
 biber seminararbeit
+pdflatex seminararbeit
 pdflatex seminararbeit
 ```
 
