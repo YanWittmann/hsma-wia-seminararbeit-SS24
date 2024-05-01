@@ -4,19 +4,21 @@ setlocal enabledelayedexpansion
 set "file_paths=seminararbeit.tex preambel.tex"
 set "script_path=scripts\build.bat"
 
-for %%f in (%file_paths%) do (
-    set "last_modified[%%f]=0"
-)
+set "first_run=1"
 
 :watch
 for %%f in (%file_paths%) do (
-    for /f "delims=" %%t in ('powershell -Command "(Get-Item '%%f').LastWriteTime.Ticks"') do (
-        if !last_modified[%%f]! lss %%t (
-            echo File '%%f' has been modified. Running script '%script_path%'...
-            cmd /c "%script_path%" -no-biber
+    for /f %%t in ('powershell -Command "(Get-Item '%%f').LastWriteTime.ToString('yyyyMMddHHmmss')"') do (
+        rem echo Checking file '%%f' with timestamp %%t compared to !last_modified[%%f]!...
+        if "!last_modified[%%f]!" neq "%%t" (
+            if not defined first_run (
+                echo File '%%f' has been modified. Running script '%script_path%'...
+                call "%script_path%" -no-biber
+            )
             set "last_modified[%%f]=%%t"
         )
     )
 )
+set "first_run="
 timeout /t 1 >nul
 goto watch
