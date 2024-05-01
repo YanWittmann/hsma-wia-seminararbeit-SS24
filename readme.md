@@ -5,7 +5,8 @@ des Pflichtmoduls "Wissenschaftliches Arbeiten" im Sommersemester 2024 an der Ho
 
 ## Bauen des Dokuments
 
-Das Skript `build.sh` baut das Dokument und räumt im Nachhinein das Verzeichnis wieder auf.
+Das Skript `scripts/build.sh` / `scripts/build.bat` baut das Dokument.
+Im Nachhinein kann mit `scripts/clean.sh` / `scripts/clean.bat` das Verzeichnis wieder aufgeräumt werden.
 Es werden dabei pdflatex und biber verwendet.
 Ansonsten können auch einfach diese Befehle ausgeführt werden:
 
@@ -15,6 +16,9 @@ pdflatex seminararbeit
 biber seminararbeit
 pdflatex seminararbeit
 ```
+
+Convenience-Scripts für das automatische Bauen bei Änderungen sind in `scripts/watch.sh` / `scripts/watch.bat` zu
+finden.
 
 ## Installation der Abhängigkeiten
 
