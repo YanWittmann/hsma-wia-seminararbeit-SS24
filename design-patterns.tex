@@ -6,7 +6,7 @@
 Allgemein wird unter einem Design Pattern eine bewährte Lösung für ein wiederkehrendes Problem verstanden.
 Im Gegensatz zu Frameworks sind Design Patterns keine konkreten Implementierungen und schließen sich nicht gegenseitig aus, was sie Programmiersprachen- und Technologie-unabhängig macht.
 
-Schulz \autocite{Schulz.DesignSpaceVisualizationTasks.2013} stellt zwei Herangehensweisen an einen Gestaltungsprozess für Visualisierungen vor:
+Von \citeauthor[S. 2367]{Schulz.DesignSpaceVisualizationTasks.2013} werden zwei Herangehensweisen an einen Gestaltungsprozess für Visualisierungen vorgestellt:
 
 \begin{itemize}
     \item Die Aufgabenstellung und die Eingabedaten bestimmen die Visualisierung.
@@ -16,13 +16,25 @@ Schulz \autocite{Schulz.DesignSpaceVisualizationTasks.2013} stellt zwei Herangeh
 \end{itemize}
 
 Die folgenden Kapitel widmen sich vor allem anhand der ersten Herangehensweise mit der Vorstellung von Design Patterns, die für digitale Dashboards relevant sind.
-Hierbei wird zwischen Patterns unterschieden, die die eigentlichen Inhalte und deren Darstellung betreffen, und solchen, die sich auf die Komposition von Inhalten beziehen.
+Hierbei wird von \citeauthor[S. 3--5]{Bach.DashboardDesignPatterns.2023} zwischen Patterns unterschieden, die die Darstellung der eigentlichen Inhalte betreffen, und solchen, die sich auf die Komposition von Inhalten beziehen.
 
 \subsection{Inhaltsgetriebene Design Patterns}\label{subsec:content-design-patterns}
 
+Inhaltsgetriebene Design Patterns beziehen sich auf die Verwendung von unterschiedlichen Elementen, die auf einem Dashboard platziert werden können.
+Jedes dieser Elemente kann unterschiedliche Informationen unterschiedlich gut kommunizieren und erfüllt andere Zwecke.
+Sie stehen im Gegensatz zu den Kompositionspatterns, die in \autoref{subsec:conposition-design-patterns} vorgestellt werden.
+
+Einige mögliche Interaktionen von Nutzern mit Inhalten von Dashboards werden in der Taxonomie von \citeauthor[S. 1]{Heer.InteractiveDynamicsVisualAnalysis.2012} beschrieben.
+Ein Nutzer kann Inhalte auf alternative Arten visualisieren, filtern, sortieren, gänzlich neue Datenformen aus vorhandenen ableiten, navigieren, organisieren und einzelne Datenpunkte auswählen, um weitere Informationen zu erhalten oder diese zu manipulieren.
+
+\citeauthor[S. 25]{MarcusHomannVassilenaBanovaPaulOelbermannHolgerWittgesandHelmutKrcmar.TowardsUserInterfaceComponentsforDashboardApplicationsonSmartphones.2013} stellen weitere häufige Interaktionstypen mit Dashboards fest:
+Favorisieren von Inhalten oder Einstellungen, Kommentarfunktionen und die Möglichkeit, Inhalte zu teilen oder zu bei Datenänderungen aktualisieren.
+
+Diese Interaktionen können durch verschiedene inhaltsgetriebene Design Patterns unterstützt werden.
+
 \subsection{Kompositionsbasierte Design Patterns}\label{subsec:conposition-design-patterns}
 
-\subsection{Zusätzliche Möglichkeiten von mobilen Dashboards}\label{subsec:zusatzliche-moglichkeiten-von-mobilen-dashboards}
+\subsection{Zusätzliche Möglichkeiten von mobilen Dashboards}\label{subsec:additional-capabilities-of-mobile-dashboards}
 
 % Use "Tutorial: Mobile BI" S.29+
 % push/pull notifications, GPS for local data, take photos, easily shareable,
