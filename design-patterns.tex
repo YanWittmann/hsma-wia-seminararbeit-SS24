@@ -1,4 +1,6 @@
 \newpage
+\
+\newpage
 
 
 \section{Design Patterns für digitale Dashboards}\label{sec:design-patterns-list}
@@ -26,11 +28,65 @@ Sie stehen im Gegensatz zu den Kompositionspatterns, die in \autoref{subsec:conp
 
 Einige mögliche Interaktionen von Nutzern mit Inhalten von Dashboards werden in der Taxonomie von \citeauthor[S. 1]{Heer.InteractiveDynamicsVisualAnalysis.2012} beschrieben.
 Ein Nutzer kann Inhalte auf alternative Arten visualisieren, filtern, sortieren, gänzlich neue Datenformen aus vorhandenen ableiten, navigieren, organisieren und einzelne Datenpunkte auswählen, um weitere Informationen zu erhalten oder diese zu manipulieren.
-
 \citeauthor[S. 25]{MarcusHomannVassilenaBanovaPaulOelbermannHolgerWittgesandHelmutKrcmar.TowardsUserInterfaceComponentsforDashboardApplicationsonSmartphones.2013} stellen weitere häufige Interaktionstypen mit Dashboards fest:
 Favorisieren von Inhalten oder Einstellungen, Kommentarfunktionen und die Möglichkeit, Inhalte zu teilen oder zu bei Datenänderungen aktualisieren.
 
 Diese Interaktionen können durch verschiedene inhaltsgetriebene Design Patterns unterstützt werden.
+In den folgenden Unterkapiteln werden Muster anhand von \citeauthor[S. 3--5]{Bach.DashboardDesignPatterns.2023}, unterschieden in konkrete Visualisierungselemente, Daten--Abstraktionsniveaus und Metainformationen, vorgestellt.
+
+\subsubsection{Visuelle Darstellungs-Patterns}
+
+Die Wahl einer visuellen Darstellung von Elementen ist stark von dem Detailgrad (\autoref{subsubsec:data-information-patterns}) von Daten abhängig.
+Begonnen wird mit den detailliertesten Visualisierungen, die weiteren abstrahieren Wertedetails stärker und fokussieren sich auf Muster und Trends.
+
+\begin{itemize}
+    \item \emph{Detaillierte Visualisierungen} sind die Elemente mit den meisten Details.
+    Sie enthalten zumeist eine große Menge an Rohdaten und entsprechende Filter/Selektionsoptionen.
+    Mit genügend Legenden und Erklärungen versehen haben sie die Möglichkeit, alleinstehend einen Kernteil eines Dashboards zu bilden.
+    \item \emph{Tabellen und Listen} können je nach Detailgrad Teil der Detailvisualisierungen sein.
+    Aufgrund der Kompaktheit der Daten und Übersichtlichkeit durch die tabellarische Anordnung sind sie besonders für den Vergleich von Einzelwerten geeignet.
+\end{itemize}
+
+\begin{itemize}
+    \item \emph{Miniaturdiagramme} sind kleine, kompakte Visualisierungen, die einen schnellen Überblick über Trends geben, ohne konkrete Werte zu zeigen.
+    Sie können beispielsweise in Tabellen eingebettet werden und stellen in der Regel reduzierte Versionen von Diagrammen dar, die in detailreicheren Visualisierungen an anderen Stellen des Dashboards zu finden sind.
+    \item \emph{Fortschrittsbalken und "`Tachos"'} visualisieren Einzelwerte (z.B.\ Prozentsatz) als Balken- oder Kreisdiagramm in einem bekannten Kontext.
+    \item \emph{Piktogramme} sind abstrakte Symbole, die Konzepte abhängig vom Kontext eines Dashboards repräsentieren.
+    Sie geben die Art, die Existenz oder die Abwesenheit von Daten an, anstatt konkrete Werte zu zeigen.
+    \item \emph{Trendpfeile} zeigen die Richtung einer Veränderung in binärer Form (oben, unten) oder als Neigung einer Datenänderung an.
+    \item \emph{Zahlen} werden ähnlich wie Piktogramme und Trendpfeile verwendet, allerdings um konkrete Kennzahlen als Einzelwerte, Schwellenwerte oder abgeleitete Werte hervorzuheben.
+\end{itemize}
+
+\subsubsection{Dateninformations-Patterns}\label{subsubsec:data-information-patterns}
+
+% Diese konzentrieren sich auf die Art der präsentierten Informationen.
+% Sie reichen von detaillierten Datensätzen, die einen umfassenden Einblick gewähren, bis hin zu abstrahierten Formen, die die Informationsmenge reduzieren und die Kernaussagen hervorheben.
+
+% \begin{itemize}
+%     \item \emph{Detaillierte Datensätze:} Diese bieten die umfassendste Sicht auf die Daten und ermöglichen Nutzern, einzelne Werte zu analysieren und zu vergleichen.
+%     Beispiele hierfür sind Tabellen, detaillierte Diagramme oder Listen.
+%     \item \emph{Aggregation:} Durch Aggregation werden Daten zusammengefasst, um Trends und Muster aufzuzeigen.
+%     Beispiele sind Summen, Durchschnittswerte oder Medianwerte.
+%     \item \emph{Filterung:} Filterung ermöglicht es Nutzern, sich auf bestimmte Teilmengen der Daten zu konzentrieren, um relevante Informationen schneller zu finden.
+%     \item \emph{Abgeleitete Werte:} Abgeleitete Werte sind Kennzahlen, die aus den Rohdaten berechnet werden, um zusätzliche Einblicke zu gewinnen.
+%     Beispiele sind Wachstumsraten, prozentuale Veränderungen oder Kennzahlen.
+%     \item \emph{Schwellenwerte:} Schwellenwerte kennzeichnen bestimmte Zustände oder Werte, die eine besondere Bedeutung haben, wie z.B.\ "`gut"' oder "`schlecht"'.
+%     Sie helfen Nutzern, kritische Bereiche zu identifizieren und schnell auf Veränderungen zu reagieren.
+%     \item \emph{Einzelwerte:} Einzelwerte, wie z.B.\ der letzte Wert einer Zeitreihe, können hervorgehoben werden, um den aktuellen Stand zu verdeutlichen.
+% \end{itemize}
+
+\subsubsection{Metainformations-Patterns}
+
+% Metainformationen liefern Kontext und Erklärungen zu den dargestellten Daten.
+% Sie helfen Nutzern, die Informationen besser zu verstehen und einzuordnen.
+
+% \begin{itemize}
+%     \item \emph{Datenquellen:} Die Angabe der Datenquellen schafft Transparenz und ermöglicht es Nutzern, die Glaubwürdigkeit der Daten zu beurteilen.
+%     \item \emph{Haftungsausschlüsse:} Haftungsausschlüsse informieren über die Verarbeitung der Daten und den Kontext, in dem sie erhoben wurden.
+%     \item \emph{Datenbeschreibungen:} Datenbeschreibungen erklären, was auf dem Dashboard dargestellt wird und welche Bedeutung die einzelnen Elemente haben.
+%     \item \emph{Aktualisierungsinformationen:} Zeitstempel zeigen an, wann die Daten zuletzt aktualisiert wurden.
+%     \item \emph{Annotationen:} Annotationen sind zusätzliche grafische Elemente, die vom Designer hinzugefügt werden, um bestimmte Punkte, Veränderungen oder Entwicklungen hervorzuheben.
+% \end{itemize}
 
 \subsection{Kompositionsbasierte Design Patterns}\label{subsec:conposition-design-patterns}
 
