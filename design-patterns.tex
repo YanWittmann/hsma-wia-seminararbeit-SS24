@@ -1,5 +1,5 @@
 \newpage
-\
+-- Seite ist absichtlich leer --
 \newpage
 
 
@@ -8,7 +8,7 @@
 Allgemein wird unter einem Design Pattern eine bewährte Lösung für ein wiederkehrendes Problem verstanden.
 Im Gegensatz zu Frameworks sind Design Patterns keine konkreten Implementierungen und schließen sich nicht gegenseitig aus, was sie Programmiersprachen- und Technologie-unabhängig macht.
 
-Von \citeauthor[S. 2367]{Schulz.DesignSpaceVisualizationTasks.2013} werden zwei Herangehensweisen an einen Gestaltungsprozess für Visualisierungen vorgestellt:
+Von \autocite[S. 2367]{Schulz.DesignSpaceVisualizationTasks.2013} werden zwei Herangehensweisen an einen Gestaltungsprozess für Visualisierungen vorgestellt:
 
 \begin{itemize}
     \item Die Aufgabenstellung und die Eingabedaten bestimmen die Visualisierung.
@@ -18,7 +18,7 @@ Von \citeauthor[S. 2367]{Schulz.DesignSpaceVisualizationTasks.2013} werden zwei 
 \end{itemize}
 
 Die folgenden Kapitel widmen sich vor allem anhand der ersten Herangehensweise mit der Vorstellung von Design Patterns, die für digitale Dashboards relevant sind.
-Hierbei wird von \citeauthor[S. 3--5]{Bach.DashboardDesignPatterns.2023} zwischen Patterns unterschieden, die die Darstellung der eigentlichen Inhalte betreffen, und solchen, die sich auf die Komposition von Inhalten beziehen.
+Hierbei wird von \autocite[S. 3--5]{Bach.DashboardDesignPatterns.2023} zwischen Patterns unterschieden, die die Darstellung der eigentlichen Inhalte betreffen, und solchen, die sich auf die Komposition von Inhalten beziehen.
 
 \subsection{Inhaltsgetriebene Design Patterns}\label{subsec:content-design-patterns}
 
@@ -26,25 +26,26 @@ Inhaltsgetriebene Design Patterns beziehen sich auf die Verwendung von unterschi
 Jedes dieser Elemente kann unterschiedliche Informationen unterschiedlich gut kommunizieren und erfüllt andere Zwecke.
 Sie stehen im Gegensatz zu den Kompositionspatterns, die in \autoref{subsec:conposition-design-patterns} vorgestellt werden.
 
-Einige mögliche Interaktionen von Nutzern mit Inhalten von Dashboards werden in der Taxonomie von \citeauthor[S. 1]{Heer.InteractiveDynamicsVisualAnalysis.2012} beschrieben.
-Ein Nutzer kann Inhalte auf alternative Arten visualisieren, filtern, sortieren, gänzlich neue Datenformen aus vorhandenen ableiten, navigieren, organisieren und einzelne Datenpunkte auswählen, um weitere Informationen zu erhalten oder diese zu manipulieren.
-\citeauthor[S. 25]{MarcusHomannVassilenaBanovaPaulOelbermannHolgerWittgesandHelmutKrcmar.TowardsUserInterfaceComponentsforDashboardApplicationsonSmartphones.2013} stellen weitere häufige Interaktionstypen mit Dashboards fest:
-Favorisieren von Inhalten oder Einstellungen, Kommentarfunktionen und die Möglichkeit, Inhalte zu teilen oder zu bei Datenänderungen aktualisieren.
+Einige mögliche Interaktionen von Nutzern mit Inhalten von Dashboards werden in der Taxonomie von \autocite[S. 1]{Heer.InteractiveDynamicsVisualAnalysis.2012} beschrieben.
+Nach dieser können Nutzer Inhalte von Dashboards filtern, sortieren, zwischen Sichten und Seiten navigieren, alternative Darstellungsweisen wählen, gänzlich neue Datentypen durch Kombinieren vorhandener ableiten und einzelne Datenpunkte auswählen, um weitere Informationen zu erhalten oder diese zu manipulieren.
+\autocite[S. 25]{MarcusHomannVassilenaBanovaPaulOelbermannHolgerWittgesandHelmutKrcmar.TowardsUserInterfaceComponentsforDashboardApplicationsonSmartphones.2013} stellt weitere häufige Interaktionstypen mit Dashboards fest:
+Favorisieren von Inhalten und Einstellungen, Kommentarfunktionen und die Möglichkeit, Inhalte zu teilen oder bei Datenänderungen zu aktualisieren.
 
 Diese Interaktionen können durch verschiedene inhaltsgetriebene Design Patterns unterstützt werden.
-In den folgenden Unterkapiteln werden Muster anhand von \citeauthor[S. 3--5]{Bach.DashboardDesignPatterns.2023}, unterschieden in konkrete Visualisierungselemente, Daten--Abstraktionsniveaus und Metainformationen, vorgestellt.
+In den folgenden Unterkapiteln werden Muster wie von \autocite[S. 3--5]{Bach.DashboardDesignPatterns.2023} vorgestellt, unterschieden in konkrete Visualisierungselemente, Daten--Abstraktionsniveaus und Metainformationen.
 
 \subsubsection{Visuelle Darstellungs-Patterns}
 
-Die Wahl einer visuellen Darstellung von Elementen ist stark von dem Detailgrad (\autoref{subsubsec:data-information-patterns}) von Daten abhängig.
-Begonnen wird mit den detailliertesten Visualisierungen, die weiteren abstrahieren Wertedetails stärker und fokussieren sich auf Muster und Trends.
+Die Wahl eines gewünschten Detailgrades der Daten (\autoref{subsubsec:data-information-patterns}) hat einen großen Einfluss darauf, welche der im Folgenden genannten Elementen infrage kommen.
+Von den detailliertesten Elementen mit den meisten Informationen, wird zu den abstrahierenden Elementen übergegangen, die eher Trends und Muster darstellen.
 
 \begin{itemize}
     \item \emph{Detaillierte Visualisierungen} sind die Elemente mit den meisten Details.
     Sie enthalten zumeist eine große Menge an Rohdaten und entsprechende Filter/Selektionsoptionen.
-    Mit genügend Legenden und Erklärungen versehen haben sie die Möglichkeit, alleinstehend einen Kernteil eines Dashboards zu bilden.
+    Oft stellen sie einen Kernbestandteil eines Dashboards dar, wenn sie mit genügend Legenden und Erklärungen versehen sind.
     \item \emph{Tabellen und Listen} können je nach Detailgrad Teil der Detailvisualisierungen sein.
     Aufgrund der Kompaktheit der Daten und Übersichtlichkeit durch die tabellarische Anordnung sind sie besonders für den Vergleich von Einzelwerten geeignet.
+    Durch Sortier- und Filteroptionen können Nutzer die Daten individuell nach ihren Bedürfnissen anpassen.
 \end{itemize}
 
 \begin{itemize}
@@ -59,34 +60,23 @@ Begonnen wird mit den detailliertesten Visualisierungen, die weiteren abstrahier
 
 \subsubsection{Dateninformations-Patterns}\label{subsubsec:data-information-patterns}
 
-% Diese konzentrieren sich auf die Art der präsentierten Informationen.
-% Sie reichen von detaillierten Datensätzen, die einen umfassenden Einblick gewähren, bis hin zu abstrahierten Formen, die die Informationsmenge reduzieren und die Kernaussagen hervorheben.
+Diese Patterns stufen die Art und den Abstraktionsgrad der in den visuellen Design Pattern präsentieren Informationen ein.
 
-% \begin{itemize}
-%     \item \emph{Detaillierte Datensätze:} Diese bieten die umfassendste Sicht auf die Daten und ermöglichen Nutzern, einzelne Werte zu analysieren und zu vergleichen.
-%     Beispiele hierfür sind Tabellen, detaillierte Diagramme oder Listen.
-%     \item \emph{Aggregation:} Durch Aggregation werden Daten zusammengefasst, um Trends und Muster aufzuzeigen.
-%     Beispiele sind Summen, Durchschnittswerte oder Medianwerte.
-%     \item \emph{Filterung:} Filterung ermöglicht es Nutzern, sich auf bestimmte Teilmengen der Daten zu konzentrieren, um relevante Informationen schneller zu finden.
-%     \item \emph{Abgeleitete Werte:} Abgeleitete Werte sind Kennzahlen, die aus den Rohdaten berechnet werden, um zusätzliche Einblicke zu gewinnen.
-%     Beispiele sind Wachstumsraten, prozentuale Veränderungen oder Kennzahlen.
-%     \item \emph{Schwellenwerte:} Schwellenwerte kennzeichnen bestimmte Zustände oder Werte, die eine besondere Bedeutung haben, wie z.B.\ "`gut"' oder "`schlecht"'.
-%     Sie helfen Nutzern, kritische Bereiche zu identifizieren und schnell auf Veränderungen zu reagieren.
-%     \item \emph{Einzelwerte:} Einzelwerte, wie z.B.\ der letzte Wert einer Zeitreihe, können hervorgehoben werden, um den aktuellen Stand zu verdeutlichen.
-% \end{itemize}
+\emph{Detaillierte Datensätze} bieten die umfassendste Sicht auf die Daten und ermöglichen es Nutzern beliebige Werte zu analysieren.
+Mit ihnen sind Nutzer am nächsten an den Rohdaten.
+Durch \emph{Aggregation} mehrerer Datenpunkte und durch \emph{Filterung} und dem Einführen von \emph{Schwellenwerten} können diese umfassenden Datensätze bewusst zusammengefasst, gefiltert und kritische Bereiche hervorgehoben werden, um spezifische Fragestellungen zu beantworten.
+Begleitend zu diesen Patterns gibt es oft interaktive Dashboardelemente, durch die diese Filter und Grenzwerte verändert werden können.
+Aus der Datenlage können auch \emph{Werte abgeleitet} werden, die eine durch zusätzliche Informationen angereicherte, transformierte Sicht auf die Daten geben.
+Und schließlich können relevante \emph{Einzelwerte} als alleinstehende Elemente hervorgehoben werden, wie z.B.\ der neueste Wert einer Zeitreihe, um komplexe Daten in schnell erfassbare Kennzahlen zu übersetzen.
 
-\subsubsection{Metainformations-Patterns}
+\subsubsection{Metainformations-Patterns}\label{subsubsec:meta-information-patterns}
 
-% Metainformationen liefern Kontext und Erklärungen zu den dargestellten Daten.
-% Sie helfen Nutzern, die Informationen besser zu verstehen und einzuordnen.
+Metainformationen stellen einen Kontext und Erklärungen zu den in Dashboards dargestellten Daten bereit, sind aber nicht Teil der Daten selbst.
+Oft ergeben sich bereits durch den Kontext des Dashboards gewisse implizite Metainformationen, hier werden jedoch ausschließlich explizite betrachtet.
 
-% \begin{itemize}
-%     \item \emph{Datenquellen:} Die Angabe der Datenquellen schafft Transparenz und ermöglicht es Nutzern, die Glaubwürdigkeit der Daten zu beurteilen.
-%     \item \emph{Haftungsausschlüsse:} Haftungsausschlüsse informieren über die Verarbeitung der Daten und den Kontext, in dem sie erhoben wurden.
-%     \item \emph{Datenbeschreibungen:} Datenbeschreibungen erklären, was auf dem Dashboard dargestellt wird und welche Bedeutung die einzelnen Elemente haben.
-%     \item \emph{Aktualisierungsinformationen:} Zeitstempel zeigen an, wann die Daten zuletzt aktualisiert wurden.
-%     \item \emph{Annotationen:} Annotationen sind zusätzliche grafische Elemente, die vom Designer hinzugefügt werden, um bestimmte Punkte, Veränderungen oder Entwicklungen hervorzuheben.
-% \end{itemize}
+\emph{Datenquellen} geben an, woher die Daten stammen und schaffen eine verbesserte Nachvollziehbarkeit und Transparenz über die Glaubwürdigkeit der Daten.
+Ebenso können \emph{Aktualisierungsinformationen} und \emph{Datenbeschreibungen} in Form von Legenden und Beschreibungstexten die Verständlichkeit und dem Verständnis über die Aktualität der Daten verbessern.
+Besondere Datenpunkte oder Entwicklungen können durch \emph{Annotationen} hervorgehoben werden, um Nutzern auf wichtige (eventuell programmatisch erkannte) Aspekte aufmerksam zu machen.
 
 \subsection{Kompositionsbasierte Design Patterns}\label{subsec:conposition-design-patterns}
 
