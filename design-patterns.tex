@@ -1,6 +1,4 @@
 \newpage
--- Seite ist absichtlich leer --
-\newpage
 
 
 \section{Design Patterns für digitale Dashboards}\label{sec:design-patterns-list}
@@ -20,6 +18,8 @@ Von \autocite[S. 2367]{Schulz.DesignSpaceVisualizationTasks.2013} werden zwei He
 Die folgenden Kapitel widmen sich vor allem anhand der ersten Herangehensweise mit der Vorstellung von Design Patterns, die für digitale Dashboards relevant sind.
 Hierbei wird von \autocite[S. 3--5]{Bach.DashboardDesignPatterns.2023} zwischen Patterns unterschieden, die die Darstellung der eigentlichen Inhalte betreffen, und solchen, die sich auf die Komposition von Inhalten beziehen.
 
+% -----
+
 \subsection{Inhaltsgetriebene Design Patterns}\label{subsec:content-design-patterns}
 
 Inhaltsgetriebene Design Patterns beziehen sich auf die Verwendung von unterschiedlichen Elementen, die auf einem Dashboard platziert werden können.
@@ -32,11 +32,11 @@ Nach dieser können Nutzer Inhalte von Dashboards filtern, sortieren, zwischen S
 Favorisieren von Inhalten und Einstellungen, Kommentarfunktionen und die Möglichkeit, Inhalte zu teilen oder bei Datenänderungen zu aktualisieren.
 
 Diese Interaktionen können durch verschiedene inhaltsgetriebene Design Patterns unterstützt werden.
-In den folgenden Unterkapiteln werden Muster wie von \autocite[S. 3--5]{Bach.DashboardDesignPatterns.2023} vorgestellt, unterschieden in konkrete Visualisierungselemente, Daten--Abstraktionsniveaus und Metainformationen.
+In den folgenden Unterkapiteln werden Muster wie von \autocite[S. 3]{Bach.DashboardDesignPatterns.2023} vorgestellt, unterschieden in konkrete Visualisierungselemente, Daten--Abstraktionsniveaus und Metainformationen.
 
 \subsubsection{Visuelle Darstellungs-Patterns}
 
-Die Wahl eines gewünschten Detailgrades der Daten (\autoref{subsubsec:data-information-patterns}) hat einen großen Einfluss darauf, welche der im Folgenden genannten Elementen infrage kommen.
+Die Wahl eines gewünschten Detailgrades der Daten (\autoref{subsubsec:data-information-patterns}) hat einen großen Einfluss darauf, welche der im Folgenden genannten Elemente infrage kommen.
 Von den detailliertesten Elementen mit den meisten Informationen, wird zu den abstrahierenden Elementen übergegangen, die eher Trends und Muster darstellen.
 
 \begin{itemize}
@@ -55,7 +55,7 @@ Von den detailliertesten Elementen mit den meisten Informationen, wird zu den ab
     \item \emph{Piktogramme} sind abstrakte Symbole, die Konzepte abhängig vom Kontext eines Dashboards repräsentieren.
     Sie geben die Art, die Existenz oder die Abwesenheit von Daten an, anstatt konkrete Werte zu zeigen.
     \item \emph{Trendpfeile} zeigen die Richtung einer Veränderung in binärer Form (oben, unten) oder als Neigung einer Datenänderung an.
-    \item \emph{Zahlen} werden ähnlich wie Piktogramme und Trendpfeile verwendet, allerdings um konkrete Kennzahlen als Einzelwerte, Schwellenwerte oder abgeleitete Werte hervorzuheben.
+    \item \emph{Zahlen} können alleinstehend ähnlich wie Piktogramme und Trendpfeile verwendet werden, allerdings um konkrete Kennzahlen hervorzuheben.
 \end{itemize}
 
 \subsubsection{Dateninformations-Patterns}\label{subsubsec:data-information-patterns}
@@ -78,7 +78,53 @@ Oft ergeben sich bereits durch den Kontext des Dashboards gewisse implizite Meta
 Ebenso können \emph{Aktualisierungsinformationen} und \emph{Datenbeschreibungen} in Form von Legenden und Beschreibungstexten die Verständlichkeit und dem Verständnis über die Aktualität der Daten verbessern.
 Besondere Datenpunkte oder Entwicklungen können durch \emph{Annotationen} hervorgehoben werden, um Nutzern auf wichtige (eventuell programmatisch erkannte) Aspekte aufmerksam zu machen.
 
+% -----
+
 \subsection{Kompositionsbasierte Design Patterns}\label{subsec:conposition-design-patterns}
+
+In ähnlichem Stil zu \autoref{subsec:content-design-patterns} werden nun die Kompositionspatterns anhand von \autocite[S. 4--5]{Bach.DashboardDesignPatterns.2023} vorgestellt.
+Diese beschreiben, wie die individuellen Komponenten mit ihren Titeln, Datenelementen und Beschreibungen (als Widgets bezeichnet) eines Dashboards angeordnet und gruppiert werden können, um eine sinnvolle Gesamtsicht zu erzeugen.
+
+\subsubsection{Seitenlayout-Patterns}
+
+Seitenlayout-Patterns beschreiben, wie einzelne Widgets auf einem Dashboard angeordnet und gruppiert werden.
+
+\begin{itemize}
+    \item \emph{Offene Layouts} platzieren Widgets frei auf einer Seite, meist ohne eine Hierarchie oder Zusammenhänge zwischen einzelnen Widgets vorzugeben.
+    Die Widgets sind oft in einem Raster angeordnet, sodass sie sich einfach an unterschiedliche Bildschirmgrößen anpassen lassen und vom Nutzer frei angeordnet werden können.
+    \item \emph{Geschichtete Layouts} organisieren Widgets mit einer impliziten Leserichtung in horizontalen oder vertikalen Schichten.
+    Je weiter rechts oder unten ein Widget platziert ist, desto detaillierter sind die Informationen, um dem Nutzer zunächst einen Überblick zu geben und dann in die Tiefe zu gehen.
+    \item \emph{Tabellenlayouts} ordnen Widgets in einem Raster an, um Zusammenhänge zwischen sich wiederholenden Konzepten zu zeigen.
+    \item \emph{Gruppierte Layouts} fassen zusammengehörige Widgets visuell zusammen, z.B.\ durch gemeinsamen Titel, Rahmen, Hintergrundfarben oder Abstände.
+\end{itemize}
+
+\subsubsection{Bildschirmraum-Nutzung-Patterns}
+
+Ein Dashboard kann aus mehreren \emph{Seiten} bestehen, die je nach Pattern unterschiedlich navigiert werden.
+Von diesen Seiten ist immer nur eine auf einmal dem Nutzer sichtbar.
+Diese Patterns beschreiben die Möglichkeiten, wie diese Seiteninhalte effektiv auf unterschiedlichen Bildschirmgrößen genutzt werden können, aber nicht unbedingt, wie einzelne Seiten zueinander angeordnet sind.
+
+\begin{itemize}
+    \item \emph{Bildschirmfüllend}: Der gesamte Inhalt einer Seite passt ohne Interaktion wie Scrollen auf den Bildschirm.
+    Dies ist vor allem für statische Übersichtdashboards wichtig, da hier oft keine Interaktionen möglich sind.
+    \item \emph{Überlauf}: Einfach zu implementieren, erlaubt ein solches Dashboard durch Scrollen zwischen Seiten zu navigieren.
+    \item \emph{Details auf Abruf}: Zusätzliche Inhalte werden z.B.\ durch Tooltips oder Popups bei Interaktion eingeblendet.
+    \item \emph{Parametrisierung}: Sichtbare Informationen können durch Schieberegler, Checkboxen oder Dropdown-Menüs angepasst werden.
+    Dadurch ändert sich die Anzahl der Seiten nicht, aber die Menge an übermittelten Informationen kann dadurch gesteinigt werden.
+    \item \emph{Mehrere Seiten}: Inhalte werden auf mehrere Seiten aufgeteilt, die durch Navigations-Patterns erreichbar sind.
+\end{itemize}
+
+\subsubsection{Struktur-Patterns}
+
+% Struktur-Patterns erfassen Beziehungen zwischen mehreren Seiten eines Dashboards:
+
+% \begin{itemize}
+%     \item \emph{Einzelseite} (61\%): Das Dashboard besteht aus einer einzigen Seite.
+%     \item \emph{Hierarchie} (14\%): Seiten sind hierarchisch angeordnet, oft mit einer Startseite und Unterseiten.
+%     \item \emph{Sequenz} (11\%): Seiten bilden eine lineare Sequenz, ähnlich einer Präsentation oder eines Assistenten.
+%     \item \emph{Netzwerk} (6\%): Seiten sind netzwerkartig verbunden und ermöglichen eine freie Navigation.
+%     \item \emph{Reiter} (8\%): Ähnliche Ansichten mit unterschiedlichen Daten werden in Reitern organisiert.
+% \end{itemize}
 
 \subsection{Zusätzliche Möglichkeiten von mobilen Dashboards}\label{subsec:additional-capabilities-of-mobile-dashboards}
 
