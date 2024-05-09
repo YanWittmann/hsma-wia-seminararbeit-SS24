@@ -16,7 +16,7 @@ Von \autocite[S. 2367]{Schulz.DesignSpaceVisualizationTasks.2013} werden zwei He
 \end{itemize}
 
 Die folgenden Kapitel widmen sich vor allem anhand der ersten Herangehensweise mit der Vorstellung von Design Patterns, die für digitale Dashboards relevant sind.
-Hierbei wird von \autocite[S. 3--5]{Bach.DashboardDesignPatterns.2023} zwischen Patterns unterschieden, die die Darstellung der eigentlichen Inhalte betreffen, und solchen, die sich auf die Komposition von Inhalten beziehen.
+Hierbei wird zwischen Patterns unterschieden, die die Darstellung der eigentlichen Inhalte betreffen, und solchen, die sich auf die Komposition von Inhalten beziehen \autocite[S. 3--5]{Bach.DashboardDesignPatterns.2023}.
 
 % -----
 
@@ -83,7 +83,7 @@ Besondere Datenpunkte oder Entwicklungen können durch \emph{Annotationen} hervo
 \subsection{Kompositionsbasierte Design Patterns}\label{subsec:conposition-design-patterns}
 
 In ähnlichem Stil zu \autoref{subsec:content-design-patterns} werden nun die Kompositionspatterns anhand von \autocite[S. 4--5]{Bach.DashboardDesignPatterns.2023} vorgestellt.
-Diese beschreiben, wie die individuellen Komponenten mit ihren Titeln, Datenelementen und Beschreibungen (als Widgets bezeichnet) eines Dashboards angeordnet und gruppiert werden können, um eine sinnvolle Gesamtsicht zu erzeugen.
+Diese beschreiben, wie die individuellen Komponenten mit ihren Titeln, Datenelementen und Beschreibungen (übergreifend als Widgets bezeichnet) eines Dashboards angeordnet und gruppiert werden können, um eine sinnvolle Gesamtsicht zu erzeugen.
 
 \subsubsection{Seitenlayout-Patterns}
 
@@ -95,7 +95,7 @@ Seitenlayout-Patterns beschreiben, wie einzelne Widgets auf einem Dashboard ange
     \item \emph{Geschichtete Layouts} organisieren Widgets mit einer impliziten Leserichtung in horizontalen oder vertikalen Schichten.
     Je weiter rechts oder unten ein Widget platziert ist, desto detaillierter sind die Informationen, um dem Nutzer zunächst einen Überblick zu geben und dann in die Tiefe zu gehen.
     \item \emph{Tabellenlayouts} ordnen Widgets in einem Raster an, um Zusammenhänge zwischen sich wiederholenden Konzepten zu zeigen.
-    \item \emph{Gruppierte Layouts} fassen zusammengehörige Widgets visuell zusammen, z.B.\ durch gemeinsamen Titel, Rahmen, Hintergrundfarben oder Abstände.
+    \item \emph{Gruppierte Layouts} fassen semantisch zusammengehörige Widgets visuell zusammen, z.B.\ durch gemeinsamen Titel, Rahmen, Hintergrundfarben oder Abstände.
 \end{itemize}
 
 \subsubsection{Bildschirmraum-Nutzung-Patterns}
@@ -108,23 +108,24 @@ Diese Patterns beschreiben die Möglichkeiten, wie diese Seiteninhalte effektiv 
     \item \emph{Bildschirmfüllend}: Der gesamte Inhalt einer Seite passt ohne Interaktion wie Scrollen auf den Bildschirm.
     Dies ist vor allem für statische Übersichtdashboards wichtig, da hier oft keine Interaktionen möglich sind.
     \item \emph{Überlauf}: Einfach zu implementieren, erlaubt ein solches Dashboard durch Scrollen zwischen Seiten zu navigieren.
-    \item \emph{Details auf Abruf}: Zusätzliche Inhalte werden z.B.\ durch Tooltips oder Popups bei Interaktion eingeblendet.
+    \item \emph{Details auf Abruf}: Zusätzliche Inhalte werden z.B.\ durch Tooltips oder modale Popups bei Interaktion eingeblendet.
     \item \emph{Parametrisierung}: Sichtbare Informationen können durch Schieberegler, Checkboxen oder Dropdown-Menüs angepasst werden.
     Dadurch ändert sich die Anzahl der Seiten nicht, aber die Menge an übermittelten Informationen kann dadurch gesteinigt werden.
-    \item \emph{Mehrere Seiten}: Inhalte werden auf mehrere Seiten aufgeteilt, die durch Navigations-Patterns erreichbar sind.
+    \item \emph{Mehrere Seiten}: Inhalte werden auf mehrere getrennte Seiten aufgeteilt, die durch Navigations-Patterns erreichbar sind.
 \end{itemize}
 
 \subsubsection{Struktur-Patterns}
 
-% Struktur-Patterns erfassen Beziehungen zwischen mehreren Seiten eines Dashboards:
+Wenn sich aus der Bildschirmnutzung mehrere Seiten in einem Dashboard ergeben, werden diese mit bestimmten Beziehungen durch Struktur-Patterns verbunden.
 
-% \begin{itemize}
-%     \item \emph{Einzelseite} (61\%): Das Dashboard besteht aus einer einzigen Seite.
-%     \item \emph{Hierarchie} (14\%): Seiten sind hierarchisch angeordnet, oft mit einer Startseite und Unterseiten.
-%     \item \emph{Sequenz} (11\%): Seiten bilden eine lineare Sequenz, ähnlich einer Präsentation oder eines Assistenten.
-%     \item \emph{Netzwerk} (6\%): Seiten sind netzwerkartig verbunden und ermöglichen eine freie Navigation.
-%     \item \emph{Reiter} (8\%): Ähnliche Ansichten mit unterschiedlichen Daten werden in Reitern organisiert.
-% \end{itemize}
+\begin{itemize}
+    \item \emph{Einzelseite}: Im einfachsten Fall besteht ein Dashboard aus einer einzigen Seite.
+    Hier können weitere Patterns wie Details auf Abruf oder Parametrisierung verwendet werden, um die Menge an Informationen unter Kontrolle zu halten.
+    \item \emph{Parallele Strukturen} sind bei sich wiederholenden Datensätzen zu finden.
+    Die so verknüpften Seiten sind also inhaltlich und vom Aufbau her ähnlich, wie z.B.\ bei einer Übersicht über verschiedene Standorte eines Unternehmens.
+    \item \emph{Hierarchische Strukturen} sind für Drill-Down-Strukturen geeignet, die in jedem Schritt mehr Details zu einem bestimmten Thema zeigen.
+    \item \emph{Offene Struktur}: Eine allgemeine Kategorie, die alle anderen Struktur-Patterns umfasst.
+\end{itemize}
 
 \subsection{Zusätzliche Möglichkeiten von mobilen Dashboards}\label{subsec:additional-capabilities-of-mobile-dashboards}
 
