@@ -8,12 +8,11 @@
 \usepackage{url}
 \usepackage[autostyle=true,german=quotes]{csquotes}
 \usepackage[
-    backref,
     sorting=none,   % Keine Sortierung
     doi=true,       % DOI anzeigen
     isbn=false,     % ISBN nicht anzeigen
     url=true,       % URLs anzeigen
-    maxnames=6,     % Ab 6 Autoren et al. verwenden
+    maxnames=4,     % Ab 4 Autoren et al. verwenden
     minnames=1,     % und nur den ersten Autor angeben
     style=ieee,
     sorting=nyt]{biblatex}
@@ -23,6 +22,10 @@
 \usepackage[printonlyused]{acronym}
 \usepackage{fancyvrb}
 \usepackage{tocloft} % Schönere Inhaltsverzeichnisse
+
+% ausrücken von Auflistungen
+\usepackage{enumitem}
+\setitemize{leftmargin=*}
 
 %\usepackage[ngerman]{betababel}
 \usepackage[german]{babel}

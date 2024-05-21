@@ -1,6 +1,3 @@
-\newpage
-
-
 \section{Design Patterns für digitale Dashboards}\label{sec:design-patterns-list}
 
 Allgemein wird unter einem Design Pattern eine bewährte Lösung für ein wiederkehrendes Problem verstanden.
@@ -24,20 +21,20 @@ Hierbei wird zwischen Patterns unterschieden, die die Darstellung der eigentlich
 
 Inhaltsgetriebene Design Patterns beziehen sich auf die Verwendung von unterschiedlichen Elementen, die auf einem Dashboard platziert werden können.
 Jedes dieser Elemente kann unterschiedliche Informationen unterschiedlich gut kommunizieren und erfüllt andere Zwecke.
-Sie stehen im Gegensatz zu den Kompositionspatterns, die in \autoref{subsec:conposition-design-patterns} vorgestellt werden.
+Sie stehen im Gegensatz zu den Kompositionspatterns.
 
 Einige mögliche Interaktionen von Nutzern mit Inhalten von Dashboards werden in der Taxonomie von \autocite[S. 1]{Heer.InteractiveDynamicsVisualAnalysis.2012} beschrieben.
 Nach dieser können Nutzer Inhalte von Dashboards filtern, sortieren, zwischen Sichten und Seiten navigieren, alternative Darstellungsweisen wählen, gänzlich neue Datentypen durch Kombinieren vorhandener ableiten und einzelne Datenpunkte auswählen, um weitere Informationen zu erhalten oder diese zu manipulieren.
 \autocite[S. 25]{MarcusHomannVassilenaBanovaPaulOelbermannHolgerWittgesandHelmutKrcmar.TowardsUserInterfaceComponentsforDashboardApplicationsonSmartphones.2013} stellt weitere häufige Interaktionstypen mit Dashboards fest:
 Favorisieren von Inhalten und Einstellungen, Kommentarfunktionen und die Möglichkeit, Inhalte zu teilen oder bei Datenänderungen zu aktualisieren.
 
-Diese Interaktionen können durch verschiedene inhaltsgetriebene Design Patterns unterstützt werden.
-In den folgenden Unterkapiteln werden Muster wie von \autocite[S. 3]{Bach.DashboardDesignPatterns.2023} vorgestellt, unterschieden in konkrete Visualisierungselemente, Daten--Abstraktionsniveaus und Metainformationen.
+Diese Interaktionen werden von durch verschiedene inhaltsgetriebene Design Patterns unterstützt werden.
+In den folgenden Unterkapiteln werden Muster, unterschieden in konkrete Visualisierungselemente, Daten--Abstraktionsniveaus und Metainformationen, vorgestellt.
 
 \subsubsection{Visuelle Darstellungs-Patterns}
 
-Die Wahl eines gewünschten Detailgrades der Daten (\autoref{subsubsec:data-information-patterns}) hat einen großen Einfluss darauf, welche der im Folgenden genannten Elemente infrage kommen.
-Von den detailliertesten Elementen mit den meisten Informationen, wird zu den abstrahierenden Elementen übergegangen, die eher Trends und Muster darstellen.
+Die Wahl eines gewünschten Detailgrades der Daten hat einen großen Einfluss darauf, welche der im Folgenden genannten Elemente infrage kommen.
+\autocite[S. 3]{Bach.DashboardDesignPatterns.2023} klassifiziert diese auf einer Skala von den detailliertesten Elementen mit den meisten Informationen zu abstrahierenden Elementen, sich eher auf Trends und Muster fokussieren.
 
 \begin{itemize}
     \item \emph{Detaillierte Visualisierungen} sind die Elemente mit den meisten Details.
@@ -46,10 +43,7 @@ Von den detailliertesten Elementen mit den meisten Informationen, wird zu den ab
     \item \emph{Tabellen und Listen} können je nach Detailgrad Teil der Detailvisualisierungen sein.
     Aufgrund der Kompaktheit der Daten und Übersichtlichkeit durch die tabellarische Anordnung sind sie besonders für den Vergleich von Einzelwerten geeignet.
     Durch Sortier- und Filteroptionen können Nutzer die Daten individuell nach ihren Bedürfnissen anpassen.
-\end{itemize}
-
-\begin{itemize}
-    \item \emph{Miniaturdiagramme} sind kleine, kompakte Visualisierungen, die einen schnellen Überblick über Trends geben, ohne konkrete Werte zu zeigen.
+    \item \emph{Miniaturdiagramme} sind kleine, kompakte Visualisierungen, die einen schnellen Überblick über Trends geben, ohne konkrete Werte zu zeigen, wie es Sparklines ebenfalls tun \autocite{tufte2006beautiful.2006}.
     Sie können beispielsweise in Tabellen eingebettet werden und stellen in der Regel reduzierte Versionen von Diagrammen dar, die in detailreicheren Visualisierungen an anderen Stellen des Dashboards zu finden sind.
     \item \emph{Fortschrittsbalken und "`Tachos"'} visualisieren Einzelwerte (z.B.\ Prozentsatz) als Balken- oder Kreisdiagramm in einem bekannten Kontext.
     \item \emph{Piktogramme} sind abstrakte Symbole, die Konzepte abhängig vom Kontext eines Dashboards repräsentieren.
@@ -60,7 +54,7 @@ Von den detailliertesten Elementen mit den meisten Informationen, wird zu den ab
 
 \subsubsection{Dateninformations-Patterns}\label{subsubsec:data-information-patterns}
 
-Diese Patterns stufen die Art und den Abstraktionsgrad der in den visuellen Design Pattern präsentieren Informationen ein.
+Diese Patterns stufen nach \autocite[S. 3]{Bach.DashboardDesignPatterns.2023} die Art und den Abstraktionsgrad der in den visuellen Design Pattern präsentieren Informationen ein.
 
 \emph{Detaillierte Datensätze} bieten die umfassendste Sicht auf die Daten und ermöglichen es Nutzern beliebige Werte zu analysieren.
 Mit ihnen sind Nutzer am nächsten an den Rohdaten.
@@ -82,7 +76,7 @@ Besondere Datenpunkte oder Entwicklungen können durch \emph{Annotationen} hervo
 
 \subsection{Kompositionsbasierte Design Patterns}\label{subsec:conposition-design-patterns}
 
-In ähnlichem Stil zu \autoref{subsec:content-design-patterns} werden nun die Kompositionspatterns anhand von \autocite[S. 4--5]{Bach.DashboardDesignPatterns.2023} vorgestellt.
+Es werden nun die Kompositionspatterns vorgestellt.
 Diese beschreiben, wie die individuellen Komponenten mit ihren Titeln, Datenelementen und Beschreibungen (übergreifend als Widgets bezeichnet) eines Dashboards angeordnet und gruppiert werden können, um eine sinnvolle Gesamtsicht zu erzeugen.
 
 \subsubsection{Seitenlayout-Patterns}

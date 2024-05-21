@@ -1,6 +1,6 @@
 #!/bin/bash
 
-file_paths=("seminararbeit.tex" "preambel.tex", "design-patterns.tex")
+file_paths=("seminararbeit.tex" "preambel.tex", "design-patterns.tex", "responsive-webdesign.tex")
 script_path="scripts/build.sh"
 
 while true; do

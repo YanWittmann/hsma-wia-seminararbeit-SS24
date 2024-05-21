@@ -1,7 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 
-set "file_paths=seminararbeit.tex preambel.tex design-patterns.tex"
+set "file_paths=seminararbeit.tex preambel.tex design-patterns.tex responsive-webdesign.tex"
 set "script_path=scripts\build.bat"
 
 set "first_run=1"
