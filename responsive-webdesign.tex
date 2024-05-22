@@ -3,9 +3,9 @@
 \newpage
 
 
-\section{Responsive Webdesign (RWD) als Grundlage}
+\section{Responsive Webdesign (RWD) als Grundlage}\label{sec:responsive-webdesign-rwd-als-grundlage}
 
-\subsection{Gründe und Definition von RWD}
+\subsection{Gründe und Definition von RWD}\label{subsec:grunde-und-definition-von-rwd}
 
 Eine Statistik aus den Jahren 2016 und 2017 \autocite{statista.GWI.2017} zeigt hervor, dass Ende 2016 der Anteil der mobilen Internetnutzung bei 53\% lag und Mitte 2017 bereits bei 61\%.
 Eine ähnliche Erhebung von Statista \autocite{statista.DataReportal.WeAreSocial.Hootsuite.2023} im Jahr 2022 führt diesen Trend hin zu einer zunehmend mobilgeräteorientierten Gesellschaft fort:
@@ -38,6 +38,36 @@ Jehl \autocite{Jehl.ResponsibleResponsiveWebDesign.2014} erweitert das Konzept v
 Dieses Konzept stellt bei der Gestaltung von Webseiten immer das Medium mit den größten Einschränkungen als Referenz ins Zentrum, sodass jede der geplanten Interaktionen auf allen unterstützten Geräten angemessen funktionieren.
 Beispielsweise soll eine mobile Verbindung ausreichen, um eine Webseite vollständig zu laden, und dass der begrenzte Bildschirmraum eines kleinen Geräts alle notwendigen Informationen anzeigen kann.
 
-\subsection{RWD durch Browser-Technologien und Frameworks}
+% -----
+
+\subsection{Theorie zur Umsetzung von RWD}
+
+Responsive Web Design (RWD) hat sich also bereits lange als unverzichtbar für die Entwicklung von plattformübergreifenden Websites etabliert.
+Im Folgenden werden einige theoretische und technische Maßnahmen aufgeführt, mit denen RWD umgesetzt werden können.
+Dabei wird nicht nur die Perspektive der Entwickler betrachtet, sondern auch die der Content-Erzeuger, die die eigentlichen Inhalte einer Website verfassen, wie auf Blogs oder in Hilfeartikeln.
+
+In ihrer rohesten Form besuchen laut Gustafson \autocite[Kap. 1]{Gustafson.AdaptiveWebDesign.2011} Endnutzer eine Website immer nur aufgrund ihrer Text- oder Bildinhalte, also die eigentlichen Inhalte der Website.
+Navigation und Menüs sind prinzipiell für Nutzer uninteressant, solange diese grundlegend ihre Zwecke erfüllen.
+
+Mit dieser Erkenntnis stellt Katajisto \autocite[S. 4]{Katajisto.CreatingSupportContent.2015} Empfehlungen für die Herangehensweise an diese Aufgabe auf.
+Bevor die Implementierung einer Website beginnen kann, sollte eine Content-Strategie durch beteiligung aller Beteiligten (Entwickler, Content-Erzeuger, \ldots) entwickelt werden.
+Diese Strategie soll aus sog\. Content-Modulen bestehen, atomare Inhaltssegmente, die von Entwicklern individuell gestaltet, auf einer Seite angeordnet und je nach Displaygröße modifiziert oder ausgeblendet werden können.
+
+Eine weitere, recht häufige Strategie ist "`Mobile First"' \autocite{Wroblewski.MobileFirst.2009} zu gestalten.
+Dieser Ansatz brint Entwickler dazu, sich zuerst auf die wichtigsten Inhalte zu konzentrieren, da unnötige und optionale Elemente auf Mobilgeräten mit kleinen Displays keinen Platz finden werden.
+Der Gestaltungsprozess einer Seite sollte daher mit der einfachsten möglichen Lösung beginnen und erst mit zunehmender Bildschirmgröße neue, größere oder kompliziertere Elemente aufnehmen.
+Nice-to-know Informationen sind oft interessant, aber nicht relevant, wenn der verfügbare Bildschirmraum begrenzt ist.
+
+Ein weiterer wichtiger Punkt, besonders für Entwickler, ist das "`Single-Sourcing"' \autocite[S. 3--4]{Katajisto.CreatingSupportContent.2015} von Seiteninhalten.
+Dies bedeutet, dass die Inhalte für jede Art von Gerät und Bildschirmgröße trotz ihrer Unterschiede aus dem gleichen Quellmaterial erzeugt und verteilt werden.
+Eine solche Reduktion der Duplizierung von Inhalten verringert den Programmier-, Autoren- und Wartungsaufwand, da nur eine einzige Datenquelle gepflegt werden muss.
+In Referenz zu den in der Planungsphase erstellten Content-Module können so Inhalte konsistent und effizient erstellt werden, die durch automatisierte Bedingungen und Variablen dynamisch für jeden Nutzer einzeln an seine Anforderungen angepasst werden.
+
+% -----
+
+\subsection{Support für RWD durch Browser-Technologien und Frameworks}
 % flexible Layouts, Media Queries
 % CSS, JavaScript, Bootstrap
+
+Nach \autocite{Katajisto.CreatingSupportContent.2015} darf dazu kein Web-Element hartkodierte Layouts mit absoluten Positionen enthalten, wie Pixeleinheiten.
+% "`Breakpoints"' \autocite{MobileWebResponsiveWebdesign.Fernandez.2012}
