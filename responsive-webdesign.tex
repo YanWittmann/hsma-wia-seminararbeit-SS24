@@ -2,33 +2,41 @@
 \
 \newpage
 
+
 \section{Responsive Webdesign (RWD) als Grundlage}
 
 \subsection{Gründe und Definition von RWD}
 
-Die Relevanz von Responsive Webdesign (RWD) nimmt über die letzten Jahre aufgrund einer Diversifizierung der Endgeräte, mit denen Nutzer auf Inhalte zugreifen können, immer stärker zu.
-
-Laut einer Erhebung von Statista \autocite{statista.DataReportal.WeAreSocial.Hootsuite.2023} wurden im Jahr 2022 90,7\% der Internetzugriffe von Mobilgeräten aus getätigt, während Laptops mit 74,8\% die zweithäufigste Option darstellten.
-Eine ähnliche Statistik aus den Jahren 2016 und 2017 \autocite{statista.GWI.2017} zeigt einen klaren Trend hin zu einer zunehmend mobilgeräteorientierten Gesellschaft: Ende 2016 lag der Anteil der mobilen Internetnutzung bei 53\%, Mitte 2017 bereits bei 61\%.
+Eine Statistik aus den Jahren 2016 und 2017 \autocite{statista.GWI.2017} zeigt hervor, dass Ende 2016 der Anteil der mobilen Internetnutzung bei 53\% lag und Mitte 2017 bereits bei 61\%.
+Eine ähnliche Erhebung von Statista \autocite{statista.DataReportal.WeAreSocial.Hootsuite.2023} im Jahr 2022 führt diesen Trend hin zu einer zunehmend mobilgeräteorientierten Gesellschaft fort:
+90,7\% der Internetzugriffe wurden von Mobilgeräten aus getätigt, während Laptops mit 74,8\% nur die zweithäufigste Option darstellten.
 
 Mobilgeräte sind demnach heutzutage das primäre Mittel, um auf Inhalte im Internet zuzugreifen.
-\autocite[S. 25]{Harmsen.2018} führt die Umfrage "`What Users Want Most From Mobile Sites Today"' von Google \autocite{Google.WhatUsersWantFromMobile.2012} auf.
-Diese zeigt, dass 96\% der Internetnutzer auf Mobilgeräten Websites gefunden haben, die nicht für mobile Geräte optimiert sind.
-Die Reaktionen auf solche unoptimierten Websites sind größtenteils negativ: 48\% der Nutzer fühlen sich frustriert und suchen sofort nach einer alternativen Seite, und 52\% geben an, dass sie aufgrund dieser Erfahrung weniger wahrscheinlich mit dem betroffenen Unternehmen interagieren werden.
+Um zu zeigen, wie wichtig mobilgeräteorientierte Websites für Unternehmen heutzutage sind, führt \autocite[S. 25]{Harmsen.2018} die Umfrage "`What Users Want Most From Mobile Sites Today"' von Google \autocite{Google.WhatUsersWantFromMobile.2012} auf.
+Diese zeigt, dass 96\% der Internetnutzer auf Mobilgeräten bereits auf Websites navigiert haben, die nicht für mobile Geräte optimiert sind.
+Die Reaktionen auf solche unoptimierten Websites sind oft negativ: 48\% der Nutzer fühlen sich frustriert und suchen sofort nach einer alternativen Seite, und 52\% geben an, dass sie aufgrund dieser Erfahrung weniger wahrscheinlich mit dem betroffenen Unternehmen interagieren werden.
+Eine schlechte Erfahrung für Mobilnutzer zu bieten birgt also für Unternehmen das reale Risiko, potentielle Kunden alleine durch ihre Online-Präsenz zu verlieren.
 
-\autocite[S. 25-33]{Harmsen.2018} Die Herausforderungen für Entwickler von Websites sind also die unbekannte Bildschirmgröße der Endapplikation, potentiell niedrige Datenübertragungsraten durch mobile Verbindungen, die unterschiedlichen Interaktionsmöglichkeiten (Maus, Touch-Geräte, \ldots) und weitere.
-RWD wird laut W3Schools \autocite{W3Schools.ResponsiveWebDesign.2024} als die Praxis definiert, Websites mithilfe von HTML und CSS so zu konfigurieren, dass sie sich automatisch an verschiedene Gerätetypen und Bildschirmgrößen anpassen.
-Die Elemente einer Seite werden damit automatisch in ihrer Größe und Positionierung vom Browser angepasst, sodass das Layout für beliebige Bildschirmgrößen noch immer angemessen bleibt.
+Eine Website mobilfähig zu machen ist allerdings keine triviale Aufgabe.
+\autocite[S. 25-33]{Harmsen.2018} führt einige Herausforderungen für Entwickler von Websites:
+die unbekannte Bildschirmgröße der Endapplikation, potentiell niedrige Datenübertragungsraten durch mobile Verbindungen, die unterschiedlichen Interaktionsmöglichkeiten (Maus, Touch-Geräte, \ldots) und weitere.
+
+\emph{Responsive Webdesign (RWD)} möchte diese Probleme angehen und steigt aufgrund der Diversifizierung der Endgeräte, mit denen Nutzer auf Inhalte zugreifen können, in seiner Relevanz über die letzten Jahre immer stärker.
+RWD wird nach W3Schools \autocite{W3Schools.ResponsiveWebDesign.2024} als die Praxis definiert, Websites sich automatisch an verschiedene Bildschirmgrößen mithilfe von HTML und CSS anpassen zu lassen.
+Die Elemente einer Seite sollen damit also automatisch in ihrer Größe und Positionierung \emph{vom Browser} implizit aus den von den Entwicklern aufgestellen Regeln angepasst werden, sodass das Layout für beliebige Bildschirmgrößen noch immer angemessen bleibt.
 
 Ein Problem mit dieser Definition ist, dass sie bereits die zu verwendenden Technologien vorschreibt.
 Daher fügt \autocite[S. 28]{Laati.ImplementingResponsiveDesignInIndustrialDashboardEditor.2017} hinzu, dass sich RWD heutzutage nicht mehr nur auf Anpassungen einer Seite durch CSS beziehen, sondern ganz allgemein auf die Fähigkeit eines Entwicklers Webanwendungen zu schreiben, die sich an eine breite Menge von Gerätetypen anpassen können.
 Beispielsweise kann so auch JavaScript verwendet werden, um komplexere Anpassungen über Code zu definieren.
 
-Eine weitere Definition von Jehl \autocite{Jehl.ResponsibleResponsiveWebDesign.2014} prägt den Begriff des "`Responsible Responsive Designs"', er fügt also den Begriff der Verantwortungsbewusstheit ein.
-Demnach sollen zunächst die zu unterstützenden Gerätearten gesammelt und asugewertet werden.
-Im nachfolgenden Entwicklungsprozess sollten dann immer die Einschränkungen des Geräts mit den geringsten Fähigkeiten betrachtet werden.
+Ein Problem mit dieser Definition ist, dass sie die zu verwendenden Technologien bereits vorschreibt.
+\autocite[S. 28]{Laati.ImplementingResponsiveDesignInIndustrialDashboardEditor.2017} erweitert diese Definition und legt Wert darauf, dass sich RWD heutzutage nicht mehr nur auf Anpassungen einer Seite durch CSS beschränkt.
+Es geht vielmehr um die Fähigkeit eines Entwicklers, Webanwendungen zu schreiben, die sich an eine große Menge von Gerätetypen anpassen können.
+So kann beispielsweise auch JavaScript eingesetzt werden, um komplexere Anpassungen der Website über Code zu ermöglichen.
 
-% Aus dieser reduzierten Bildschirmgröße und
+Jehl \autocite{Jehl.ResponsibleResponsiveWebDesign.2014} erweitert das Konzept von RWD um den Begriff des "`Responsible Responsive Designs"', der die Verantwortungsbewusstheit in den Vordergrund stellt.
+Dieses Konzept stellt bei der Gestaltung von Webseiten immer das Medium mit den größten Einschränkungen als Referenz ins Zentrum, sodass jede der geplanten Interaktionen auf allen unterstützten Geräten angemessen funktionieren.
+Beispielsweise soll eine mobile Verbindung ausreichen, um eine Webseite vollständig zu laden, und dass der begrenzte Bildschirmraum eines kleinen Geräts alle notwendigen Informationen anzeigen kann.
 
 \subsection{RWD durch Browser-Technologien und Frameworks}
 % flexible Layouts, Media Queries
