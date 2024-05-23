@@ -75,7 +75,7 @@ Nach \autocite{Harmsen.2018} führt die Entwicklung hin zu größeren Pixeldicht
 Um den Problemen durch die immer weiter wachsenden Displays entgegenzuwirken, wurde die Einheit der CSS-Pixel eingeführt.
 Sie abstrahieren die Gerätepixel zu logischen CSS-Pixeln, die beliebige Vielfache eines Gerätepixels einnehmen können.
 
-\autocite{JiangResponsiveWebDesignModeAndApplication.2014} führt als universelle und generell anwendbare Praxis für die korrekte automatische Erkennung der CSS-Pixelskalierung mit minimalem Aufwand das Hinzufügen des folgenden \emph{meta}--Tags in die \emph{head}--Sektion der Seite.
+\autocite{JiangResponsiveWebDesignModeAndApplication.2014} führt als universelle und generell anwendbare Praxis für die automatische Erkennung der optimalen CSS-Pixelskalierung mit minimalem Aufwand das Hinzufügen des folgenden \emph{meta}--Tags in die \emph{head}--Sektion der Seite.
 
 % @formatter:off
 \begin{verbatim}
@@ -86,21 +86,33 @@ Sie abstrahieren die Gerätepixel zu logischen CSS-Pixeln, die beliebige Vielfac
 % @formatter:on
 
 Diese Maßnahme hat als Effekt, dass ein Web-Element auf jedem Gerät die gleiche physikalische Fläche einnimmt, egal welche Pixeldichte ein Gerät hat.
+Mit dem Problem der Pixeldichte gelöst, können nun weitere Maßnahmen für die verbesserte Unterstützung von RWD aufgeführt werden.
 
----
+Nach \autocite{Katajisto.CreatingSupportContent.2015} darf es auf einer Seite keine hartkodierte Layouts mit absoluten Positionen geben.
+Jedes Web-Element muss auf die aktuelle Browserumgebung reagieren können.
 
-rewrite this
-
-Um RWD zu ermöglichen, gibt es nach Fernandez \autocite[S. 3]{MobileWebResponsiveWebdesign.Fernandez.2012} im Wesentlichen zwei relevante Schritte, bei denen Anpassungen am Layout vorgenommen werden müssen.
-Der erste Schritt betrifft das Verhalten beim Überschreiten von sog\. "`Breakpoints"'.
+Es gibt nach Fernandez \autocite[S. 3]{MobileWebResponsiveWebdesign.Fernandez.2012} im Wesentlichen zwei relevante Schritte, bei denen Anpassungen am Layout vorgenommen werden müssen.
+Der erste Schritt betrifft das Verhalten beim Überschreiten von sog.\ "`Breakpoints"'.
 Der zweite Schritt bezieht sich auf die Anpassung des Layouts zwischen diesen Breakpoints.
 
-Breakpoints sind definierte Displayauflösungen, meist in der Horizontalen und in Pixeln gemessen, die die große Menge an möglichen Auflösungen in einige wenige, überschaubare Segmente unterteilen.
-Zwischen diesen Breakpoints kann das Layout der Seite prinzipiell auf dieselbe Art und Weise behandelt werden, hier ist es möglich dynamische Anpassungen mit minimalen Auswirkungen auf das Layout zu definieren.
+Breakpoints sind definierte Displayauflösungen, die die große Menge an möglichen Auflösungen in einige wenige, überschaubare Segmente unterteilen.
+Die Auflösungen werden meist in der Horizontalen und in CSS-Pixeln gemessen, sind also für alle Gerätearten durch den obigen meta--Tag normalisiert.
+Zwischen diesen Breakpoints kann das Layout der Seite auf jeweils dieselbe Art und Weise behandelt werden, hier werden also dynamische Anpassungen mit minimalen Auswirkungen auf das Layout definiert.
 An den Breakpoints selbst muss das Layout jedoch wesentlich verändert werden, um weiterhin angemessen dargestellt zu werden.
+Sie müssen bei der initialen Problemanalyse gefunden werden und werden im weiteren Verlauf verwendet.
 
-Die Breakpoint-Aufteilung lässt sich direkt über das Media Queries Modul von CSS implementieren.
+Das Konzept der Breakpoint-Aufteilung lässt sich direkt über das Media Queries Modul von CSS implementieren.
+\autocite{JiangResponsiveWebDesignModeAndApplication.2014}
+Media Queries erlauben Abfragen einer Vielzahl an Browser-Properties, von denen bei der dynamischen Anpassung von Seiten hauptsächlich die Erkennung der Seitenbreite benötigt wird.
+Jeder Media Query-Block stellt ein Segment zwischen zwei Breakpoints dar, wobei immer die obere und untere CSS-Pixelgrenze in den \emph{max-width} und \emph{min-width}--Attributen des Blocks geführt wird.
 
----
+% @formatter:off
+\begin{verbatim}
+@media only screen and (min-width:768px)
+       and (max-width:1024px) { }
+\end{verbatim}
+% @formatter:on
 
-\autocite{Katajisto.CreatingSupportContent.2015} darf dazu kein Web-Element hartkodierte Layouts mit absoluten Positionen enthalten, wie Pixeleinheiten.
+Innerhalb dieser Blöcke können Elemente auf zwei verschiedene Arten durch CSS mit Styles versehen werden.
+\emph{html, body{min-width:1333px}}
+\autocite{JiangResponsiveWebDesignModeAndApplication.2014}
