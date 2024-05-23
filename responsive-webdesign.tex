@@ -59,7 +59,7 @@ Der Gestaltungsprozess einer Seite sollte daher mit der einfachsten möglichen L
 Nice-to-know Informationen sind oft interessant, aber nicht relevant, wenn der verfügbare Bildschirmraum begrenzt ist.
 
 Ein weiterer wichtiger Punkt, besonders für Entwickler, ist das "`Single-Sourcing"' \autocite[S. 3--4]{Katajisto.CreatingSupportContent.2015} von Seiteninhalten.
-Dies bedeutet, dass die Inhalte für jede Art von Gerät und Bildschirmgröße trotz ihrer Unterschiede aus dem gleichen Quellmaterial erzeugt und verteilt werden.
+Dies bedeutet, dass die Inhalte für jede Art von Gerät und Bildschirmgröße trotz ihrer Unterschiede dennoch aus dem gleichen Quellmaterial erzeugt und verteilt werden.
 Eine solche Reduktion der Duplizierung von Inhalten verringert den Programmier-, Autoren- und Wartungsaufwand, da nur eine einzige Datenquelle gepflegt werden muss.
 In Referenz zu den in der Planungsphase erstellten Content-Module können so Inhalte konsistent und effizient erstellt werden, die durch automatisierte Bedingungen und Variablen dynamisch für jeden Nutzer einzeln an seine Anforderungen angepasst werden.
 
@@ -69,5 +69,38 @@ In Referenz zu den in der Planungsphase erstellten Content-Module können so Inh
 % flexible Layouts, Media Queries
 % CSS, JavaScript, Bootstrap
 
-Nach \autocite{Katajisto.CreatingSupportContent.2015} darf dazu kein Web-Element hartkodierte Layouts mit absoluten Positionen enthalten, wie Pixeleinheiten.
-% "`Breakpoints"' \autocite{MobileWebResponsiveWebdesign.Fernandez.2012}
+Handys mit Auflösungen, die denen von großen Desktop-Monitoren gleichen, werden immer häufiger.
+Im Jahr 2017 wurde das erste kommerzielle Handy mit einer 4K-Auflösung (2160 × 3840 Pixel, 806 ppi Pixeldichte) veröffentlicht \autocite{Wikipedia.SonyXperiaZ5Premium.2024}.
+Nach \autocite{Harmsen.2018} führt die Entwicklung hin zu größeren Pixeldichten dazu, dass die direkte Verwendung von Gerätepixeln als logische Pixel nicht mehr praktikabel ist, da die dargestellten Inhalte ansonsten viel zu klein wären, um von Nutzern lesbar zu sein.
+Um den Problemen durch die immer weiter wachsenden Displays entgegenzuwirken, wurde die Einheit der CSS-Pixel eingeführt.
+Sie abstrahieren die Gerätepixel zu logischen CSS-Pixeln, die beliebige Vielfache eines Gerätepixels einnehmen können.
+
+\autocite{JiangResponsiveWebDesignModeAndApplication.2014} führt als universelle und generell anwendbare Praxis für die korrekte automatische Erkennung der CSS-Pixelskalierung mit minimalem Aufwand das Hinzufügen des folgenden \emph{meta}--Tags in die \emph{head}--Sektion der Seite.
+
+% @formatter:off
+\begin{verbatim}
+<meta name="viewport"
+      content="width=device-width,
+      initial-scale=1" />
+\end{verbatim}
+% @formatter:on
+
+Diese Maßnahme hat als Effekt, dass ein Web-Element auf jedem Gerät die gleiche physikalische Fläche einnimmt, egal welche Pixeldichte ein Gerät hat.
+
+---
+
+rewrite this
+
+Um RWD zu ermöglichen, gibt es nach Fernandez \autocite[S. 3]{MobileWebResponsiveWebdesign.Fernandez.2012} im Wesentlichen zwei relevante Schritte, bei denen Anpassungen am Layout vorgenommen werden müssen.
+Der erste Schritt betrifft das Verhalten beim Überschreiten von sog\. "`Breakpoints"'.
+Der zweite Schritt bezieht sich auf die Anpassung des Layouts zwischen diesen Breakpoints.
+
+Breakpoints sind definierte Displayauflösungen, meist in der Horizontalen und in Pixeln gemessen, die die große Menge an möglichen Auflösungen in einige wenige, überschaubare Segmente unterteilen.
+Zwischen diesen Breakpoints kann das Layout der Seite prinzipiell auf dieselbe Art und Weise behandelt werden, hier ist es möglich dynamische Anpassungen mit minimalen Auswirkungen auf das Layout zu definieren.
+An den Breakpoints selbst muss das Layout jedoch wesentlich verändert werden, um weiterhin angemessen dargestellt zu werden.
+
+Die Breakpoint-Aufteilung lässt sich direkt über das Media Queries Modul von CSS implementieren.
+
+---
+
+\autocite{Katajisto.CreatingSupportContent.2015} darf dazu kein Web-Element hartkodierte Layouts mit absoluten Positionen enthalten, wie Pixeleinheiten.
