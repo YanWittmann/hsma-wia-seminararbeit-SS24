@@ -1,7 +1,11 @@
 \section{Design Patterns für digitale Dashboards}\label{sec:design-patterns-list}
 
-Allgemein wird unter einem Design Pattern eine bewährte Lösung für ein wiederkehrendes Problem verstanden.
+Nach \autocite[S. xi]{Gamma.DesignPatterns.1994} wird unter einem Design Pattern eine bewährte, wiederverwendbare Lösung für ein häufig auftretendes Problem im Softwareentwurf verstanden.
+Design Patterns werden entdeckt, und nicht erfunden, und sind somit eine Sammlung von Best Practices, die in der Praxis erprobt und bewährt sind \autocite{Few.InformationDashboardDesign.2013}.
 Im Gegensatz zu Frameworks sind Design Patterns keine konkreten Implementierungen und schließen sich nicht gegenseitig aus, was sie Programmiersprachen- und Technologie-unabhängig macht.
+
+Design Patterns gibt es in vielen Bereichen der Softwareentwicklung, hier werden diese für die Gestaltung von Benutzeroberflächen aufgeführt.
+Andere Design Patterns können in der Software-Architektur oder in der objektorientierten Programmierung\autocite{Gamma.DesignPatterns.1994} gefunden werden.
 
 Von \autocite[S. 2367]{Schulz.DesignSpaceVisualizationTasks.2013} werden zwei Herangehensweisen an einen Gestaltungsprozess für Visualisierungen vorgestellt:
 
@@ -65,12 +69,47 @@ Und schließlich können relevante \emph{Einzelwerte} als alleinstehende Element
 
 \subsubsection{Metainformations-Patterns}\label{subsubsec:meta-information-patterns}
 
-Metainformationen stellen einen Kontext und Erklärungen zu den in Dashboards dargestellten Daten bereit, sind aber nicht Teil der Daten selbst.
+\autocite[S. 3]{Bach.DashboardDesignPatterns.2023} Metainformationen stellen einen Kontext und Erklärungen zu den in Dashboards dargestellten Daten bereit, sind aber nicht Teil der Daten selbst.
 Oft ergeben sich bereits durch den Kontext des Dashboards gewisse implizite Metainformationen, hier werden jedoch ausschließlich explizite betrachtet.
 
 \emph{Datenquellen} geben an, woher die Daten stammen und schaffen eine verbesserte Nachvollziehbarkeit und Transparenz über die Glaubwürdigkeit der Daten.
 Ebenso können \emph{Aktualisierungsinformationen} und \emph{Datenbeschreibungen} in Form von Legenden und Beschreibungstexten die Verständlichkeit und dem Verständnis über die Aktualität der Daten verbessern.
 Besondere Datenpunkte oder Entwicklungen können durch \emph{Annotationen} hervorgehoben werden, um Nutzern auf wichtige (eventuell programmatisch erkannte) Aspekte aufmerksam zu machen.
+
+\subsubsection{Datentypen-Patterns}
+
+In der Taxonomie \emph{Type by Task} von \autocite[S. 2--5]{Shneiderman.TheEyesHaveIt.1996} werden sieben verschiedene Datentypen vorgestellt.
+Je nach Datentyp können unterschiedliche Visualisierungen und Interaktionen sinnvoll sein.
+
+\begin{itemize}
+    \item \emph{1D}:
+    Einzelne Datenpunkte, die auf einer Achse oder in einer Liste linear dargestellt werden.
+    Die Daten sind in der Regel Code, Textzeilen, einzelne Zahlen oder Kategorienamen.
+    \item \emph{2D}:
+    Planare Abbildungen oder Zuordnungen zwischen Datenpunkten in einem zweidimensionalen Raum.
+    Hierzu zählen beispielsweise Karten und Gebäudepläne, aber auch Tabellen und zweidimensionale Diagramme wie Streudiagramme.
+    Diese haben die Möglichkeit, dem Nutzer Gruppierungen und ähnliche Muster zu zeigen.
+    \item \emph{3D}:
+    Hierzu zählen dreidimensionale Modelle und Diagramme.
+    Ein Nutzer kann hier Verhältnisse wie Abstände, oben/unten/links/rechts und Größen erkennen.
+    Um zu verhindern, dass Daten hinter weiteren versteckt werden, können Interaktionsmöglichkeiten wie Zoomen und Rotieren angeboten werden oder Transparenzen genutzt werden.
+    \item \emph{ND}:
+    Die meisten Datentypen, wie relationale Datenbanken oder reale 3D-Modelle lassen sich gut über Visualisierungen in 2D oder 3D darstellen.
+    Die Herausforderung beginnt, sobald weitere (n) Dimensionen hinzukommen, denn nun müssen diese hochdimensionalen Daten in einen 2- oder 3-dimensionalen Raum abgebildet werden.
+    Wenn n noch recht klein ist, können Knöpfe und Schieberegler genutzt werden, um sich innerhalb der einzelnen Dimensionen zu bewegen.
+    Bei höheren Dimensionen können Clusteranalysen und andere Methoden genutzt werden, um die Daten zu reduzieren und zu gruppieren.
+    \item \emph{Temporal}:
+    Zeitreihen und andere zeitbezogene Daten sind häufig verwendete Datentypen für Messungs- und Beobachtungsdaten.
+    Sie unterscheiden sich von den 1D-Daten dadurch, dass sie ein definiertes Zeitintervall mit Start und Ende haben und Datenpunkte sich überlappen können.
+    Nutzer können hier Trends über die Zeit erkennen und Werte vor- oder nach einem Referenzpunkt vergleichen.
+    \item \emph{Tree/Hierarchical}:
+    In hierarchischen Daten sind Datenpunkte in einer Baumstruktur angeordnet, jeder Knoten hat genau einen Elternknoten (außer der Wurzel) und beliebig viele Kindknoten.
+    Bäume werden für Klassifikationen und Kategorisierungen von Daten genutzt.
+    In einem interaktiven Modell ist es einfacher die Hierarchie zu verstehen, wenn Wurzel- oder Blattknoten fixiert werden können oder Unterbäume ein- und ausgeklappt werden können.
+    \item \emph{Network}:
+    Netzwerke sind eine spezielle Form von hierarchischen Daten, bei denen die Beziehungen zwischen den Knoten nicht nur hierarchisch, sondern auch zyklisch sein können.
+    Diese kommen beispielsweise in sozialen Netzwerken oder in der Logistik vor.
+\end{itemize}
 
 % -----
 
@@ -81,7 +120,7 @@ Diese beschreiben, wie die individuellen Komponenten mit ihren Titeln, Datenelem
 
 \subsubsection{Seitenlayout-Patterns}
 
-Seitenlayout-Patterns beschreiben, wie einzelne Widgets auf einem Dashboard angeordnet und gruppiert werden.
+\autocite[S. 4]{Bach.DashboardDesignPatterns.2023} Seitenlayout-Patterns beschreiben, wie einzelne Widgets auf einem Dashboard angeordnet und gruppiert werden.
 
 \begin{itemize}
     \item \emph{Offene Layouts} platzieren Widgets frei auf einer Seite, meist ohne eine Hierarchie oder Zusammenhänge zwischen einzelnen Widgets vorzugeben.
@@ -94,7 +133,7 @@ Seitenlayout-Patterns beschreiben, wie einzelne Widgets auf einem Dashboard ange
 
 \subsubsection{Bildschirmraum-Nutzung-Patterns}
 
-Ein Dashboard kann aus mehreren \emph{Seiten} bestehen, die je nach Pattern unterschiedlich navigiert werden.
+\autocite[S. 4]{Bach.DashboardDesignPatterns.2023} Ein Dashboard kann aus mehreren \emph{Seiten} bestehen, die je nach Pattern unterschiedlich navigiert werden.
 Von diesen Seiten ist immer nur eine auf einmal dem Nutzer sichtbar.
 Diese Patterns beschreiben die Möglichkeiten, wie diese Seiteninhalte effektiv auf unterschiedlichen Bildschirmgrößen genutzt werden können, aber nicht unbedingt, wie einzelne Seiten zueinander angeordnet sind.
 
@@ -110,7 +149,9 @@ Diese Patterns beschreiben die Möglichkeiten, wie diese Seiteninhalte effektiv 
 
 \subsubsection{Struktur-Patterns}
 
-Wenn sich aus der Bildschirmnutzung mehrere Seiten in einem Dashboard ergeben, werden diese mit bestimmten Beziehungen durch Struktur-Patterns verbunden.
+\autocite[S. 4]{Bach.DashboardDesignPatterns.2023} führt die folgenden Struktur-Patterns auf, die die Beziehungen zwischen den durch die Bildschirmnutzung entstehenden Seiten eines Dashboards beschreiben.
+\autocite{Shneiderman.TheEyesHaveIt.1996} stellt ein Basisprinzip auf, dem alle Designs folgen sollten: die "`Overview first, zoom and filter, then details-on-demand"'-Strategie.
+Es sollte also immer mit einer Übersicht begonnen werden, in der durch Interaktionen in die Tiefe gegangen werden kann.
 
 \begin{itemize}
     \item \emph{Einzelseite}: Im einfachsten Fall besteht ein Dashboard aus einer einzigen Seite.
@@ -125,3 +166,7 @@ Wenn sich aus der Bildschirmnutzung mehrere Seiten in einem Dashboard ergeben, w
 
 % Use "Tutorial: Mobile BI" S.29+
 % push/pull notifications, GPS for local data, take photos, easily shareable,
+
+\autocite{Yigitbasioglu.AReviewOfDashboardsInPerformanceManagement.2012}
+
+\autocite{Watson.MobileBi.2015}

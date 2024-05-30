@@ -1,13 +1,8 @@
-\newpage
-\
-\newpage
-
-
 \section{Responsive Webdesign (RWD) als Grundlage}\label{sec:responsive-webdesign-rwd-als-grundlage}
 
 \subsection{Gründe und Definition von RWD}\label{subsec:grunde-und-definition-von-rwd}
 
-Eine Statistik aus den Jahren 2016 und 2017 \autocite{statista.GWI.2017} zeigt hervor, dass Ende 2016 der Anteil der mobilen Internetnutzung bei 53\% lag und Mitte 2017 bereits bei 61\%.
+Eine Statistik aus den Jahren 2016 und 2017 \autocite{statista.GWI.2017} zeigt, dass Ende 2016 der Anteil der mobilen Internetnutzung bei 53\% lag und Mitte 2017 bereits bei 61\%.
 Eine ähnliche Erhebung von Statista \autocite{statista.DataReportal.WeAreSocial.Hootsuite.2023} im Jahr 2022 führt diesen Trend hin zu einer zunehmend mobilgeräteorientierten Gesellschaft fort:
 90,7\% der Internetzugriffe wurden von Mobilgeräten aus getätigt, während Laptops mit 74,8\% nur die zweithäufigste Option darstellten.
 
@@ -119,10 +114,13 @@ Dann werden die Media Queries ausschließlich dazu verwendet, die Anordnung, Gr�
 Diese Strategie erzeugt demnach durch die hier erforderliche Betrachtung jeder möglichen Seitenbreite in Pixeln jedoch einen größeren Entwicklungsaufwand.
 Ihre Nutzung ist es bei nicht--scrollenden Dashboardlayouts jedoch oft wert, da es immer einen Mangel an Bildschirmraum für die darzustellenden Informationen gibt und so keine Fläche durch einen Rahmen um die Seite verschenkt wird.
 
-% FIXME: Quelle zu getbootstrap.com
-Frameworks wie Bootstrap erlauben beide Strategien über vordefinierte CSS-Klassen (\emph{row}, \emph{col} und ihre Varianten).
+Frameworks wie Bootstrap \autocite{Bootstrap.BuildResponsiveSites.2024} erlauben beide Strategien über vordefinierte CSS-Klassen (\emph{row}, \emph{col} und ihre Varianten).
 Diese setzen die maximale Breite einer Seite entweder statisch bei gewissen benannten Breakpoints über die oben genannte Strategie oder über ein \emph{flex}--Layout dynamisch für jede Bildschirmbreite.
 Die Größen von Elementen auf der Seite wird ebenfalls entsprechend automatisch angepasst.
 Zusammen mit anderen vordefinierten Klassen für die Gestaltung von Überschriften, Textelementen, Formularelementen und vielen weiteren erlaubt Bootstrap eine schnelle Entwicklung von Prototypen und produktionsfähigen Dashboards.
 
 \autocite[S. 72]{Harmsen.2018} Für fortgeschrittene Anpassungen mit größeren strukturellen Auswirkungen auf eine Seite oder Änderungen von Textinhalten ist das Einsetzen von JavaScript jedoch unerlässlich.
+Um beispielsweise die Anzahl der anzuzeigenden Elemente in einer Liste dynamisch zu ändern, muss JavaScript die Anzahl der Elemente basierend auf Eigenschaften wie der Bildschirmbreite berechnen und die Elemente entsprechend hinzufügen oder entfernen.
+Ebenso muss eine Navigationsleiste auf mobilen Geräten oft in ein ausfahrbares Seitenmenü umgewandelt werden, um Platz zu sparen.
+Diese Anpassungen müssen über sogenannte Listener auf die Änderung der Bildschirmgröße reagieren und die Seite entsprechend anpassen.
+Änderungen dieser Art wären nicht ohne JavaScript möglich.
