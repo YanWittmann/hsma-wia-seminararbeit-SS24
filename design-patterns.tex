@@ -164,9 +164,20 @@ Es sollte also immer mit einer Übersicht begonnen werden, in der durch Interakt
 
 \subsection{Zusätzliche Möglichkeiten von mobilen Dashboards}\label{subsec:additional-capabilities-of-mobile-dashboards}
 
-% Use "Tutorial: Mobile BI" S.29+
-% push/pull notifications, GPS for local data, take photos, easily shareable,
+% Use "Tutorial: Mobile BI" S.609
+% push/pull notifications, easily shareable, GPS for local data, take photos
 
-\autocite{Yigitbasioglu.AReviewOfDashboardsInPerformanceManagement.2012}
+Mobilgeräte bieten neben ihren genannten Herausforderungen auch einige einzigartigen Features, die in Desktop- oder Laptop-Dashboards nicht verfügbar sind.
+\autocite[S. 609]{Watson.MobileBi.2015} führt einige dieser Möglichkeiten auf.
 
-\autocite{Watson.MobileBi.2015}
+So gibt es die Möglichkeit, auch wenn ein Nutzer die Website oder App nicht geöffnet hat, ihn durch \emph{Push- oder Pull-Benachrichtigungen} auf neue Daten oder Entwicklungen regelmäßig oder Eventgetrieben aufmerksam zu machen.
+Inhalte können auf mobilen Geräten auch einfacher geteilt werden, z.B.\ mit \emph{Social-Media-Integrationen} durch Apps oder \emph{E-Mail-Versand}.
+Durch die Nutzung von \emph{GPS} \autocite{Steiner.GeolocationInTheBrowser.2019} kann die Position des Nutzers genutzt werden, um Daten über lokale Ereignisse oder Standorte anzuzeigen, z.B.\ über eine Kartenansicht.
+Auch das \emph{Fotografieren} von Dokumenten oder anderen Informationen kann genutzt werden, um diese in Dashboards zu integrieren.
+
+Diese Features können in Browsern über Web-APIs, wie z.B.\ die Geolocation-API \autocite{Steiner.GeolocationInTheBrowser.2019} oder die Notifications-API \autocite{MDN.UsingNotificationsAPI.2024}, genutzt werden.
+
+Jede dieser zusätzlichen Möglichkeiten birgt allerdings auch ein Problem für die Privatsphäre der Nutzer.
+So muss vor allem bei hoch-Personenbezogenen Daten wie GPS-Standorten \autocite[S. 4--7]{Wang.PreservingPrivacyForLocationBased.2010} darauf geachtet werden, dass die Daten sicher verschlüsselt sind und nicht zu einer Profilbildung oder -verfolgung missbraucht werden können.
+
+
