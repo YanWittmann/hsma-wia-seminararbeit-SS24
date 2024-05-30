@@ -25,10 +25,6 @@ die unbekannte Bildschirmgröße der Endapplikation, potentiell niedrige Datenü
 RWD wird nach W3Schools \autocite{W3Schools.ResponsiveWebDesign.2024} als die Praxis definiert, Websites sich automatisch an verschiedene Bildschirmgrößen mithilfe von HTML und CSS anpassen zu lassen.
 Die Elemente einer Seite sollen damit also automatisch in ihrer Größe und Positionierung \emph{vom Browser} implizit aus den von den Entwicklern aufgestellen Regeln angepasst werden, sodass das Layout für beliebige Bildschirmgrößen noch immer angemessen bleibt.
 
-Ein Problem mit dieser Definition ist, dass sie bereits die zu verwendenden Technologien vorschreibt.
-Daher fügt \autocite[S. 28]{Laati.ImplementingResponsiveDesignInIndustrialDashboardEditor.2017} hinzu, dass sich RWD heutzutage nicht mehr nur auf Anpassungen einer Seite durch CSS beziehen, sondern ganz allgemein auf die Fähigkeit eines Entwicklers Webanwendungen zu schreiben, die sich an eine breite Menge von Gerätetypen anpassen können.
-Beispielsweise kann so auch JavaScript verwendet werden, um komplexere Anpassungen über Code zu definieren.
-
 Ein Problem mit dieser Definition ist, dass sie die zu verwendenden Technologien bereits vorschreibt.
 \autocite[S. 28]{Laati.ImplementingResponsiveDesignInIndustrialDashboardEditor.2017} erweitert diese Definition und legt Wert darauf, dass sich RWD heutzutage nicht mehr nur auf Anpassungen einer Seite durch CSS beschränkt.
 Es geht vielmehr um die Fähigkeit eines Entwicklers, Webanwendungen zu schreiben, die sich an eine große Menge von Gerätetypen anpassen können.
@@ -51,7 +47,7 @@ Navigation und Menüs sind prinzipiell für Nutzer uninteressant, solange diese 
 
 Mit dieser Erkenntnis stellt Katajisto \autocite[S. 4]{Katajisto.CreatingSupportContent.2015} Empfehlungen für die Herangehensweise an diese Aufgabe auf.
 Bevor die Implementierung einer Website beginnen kann, sollte eine Content-Strategie durch beteiligung aller Beteiligten (Entwickler, Content-Erzeuger, \ldots) entwickelt werden.
-Diese Strategie soll aus sog\. Content-Modulen bestehen, atomare Inhaltssegmente, die von Entwicklern individuell gestaltet, auf einer Seite angeordnet und je nach Displaygröße modifiziert oder ausgeblendet werden können.
+Diese Strategie soll aus sog.\ Content-Modulen bestehen, atomare Inhaltssegmente, die von Entwicklern individuell gestaltet, auf einer Seite angeordnet und je nach Displaygröße modifiziert oder ausgeblendet werden können.
 
 Eine weitere, recht häufige Strategie ist "`Mobile First"' \autocite{Wroblewski.MobileFirst.2009} zu gestalten.
 Dieser Ansatz brint Entwickler dazu, sich zuerst auf die wichtigsten Inhalte zu konzentrieren, da unnötige und optionale Elemente auf Mobilgeräten mit kleinen Displays keinen Platz finden werden.
@@ -71,8 +67,8 @@ In Referenz zu den in der Planungsphase erstellten Content-Module können so Inh
 
 Handys mit Auflösungen, die denen von großen Desktop-Monitoren gleichen, werden immer häufiger.
 Im Jahr 2017 wurde das erste kommerzielle Handy mit einer 4K-Auflösung (2160 × 3840 Pixel, 806 ppi Pixeldichte) veröffentlicht \autocite{Wikipedia.SonyXperiaZ5Premium.2024}.
-Nach \autocite{Harmsen.2018} führt die Entwicklung hin zu größeren Pixeldichten dazu, dass die direkte Verwendung von Gerätepixeln als logische Pixel nicht mehr praktikabel ist, da die dargestellten Inhalte ansonsten viel zu klein wären, um von Nutzern lesbar zu sein.
-Um den Problemen durch die immer weiter wachsenden Displays entgegenzuwirken, wurde die Einheit der CSS-Pixel eingeführt.
+Diese Entwicklung hin zu größeren Pixeldichten führt nach \autocite{Harmsen.2018} dazu, dass die direkte Verwendung von Gerätepixeln als logische Pixel nicht mehr praktikabel ist, da die dargestellten Inhalte ansonsten viel zu klein wären, um von Nutzern lesbar zu sein.
+Um den Problemen durch die immer weiter wachsenden Displays entgegenzuwirken, wurde in Browsern die Einheit der CSS-Pixel eingeführt.
 Sie abstrahieren die Gerätepixel zu logischen CSS-Pixeln, die beliebige Vielfache eines Gerätepixels einnehmen können.
 
 \autocite{JiangResponsiveWebDesignModeAndApplication.2014} führt als universelle und generell anwendbare Praxis für die automatische Erkennung der optimalen CSS-Pixelskalierung mit minimalem Aufwand das Hinzufügen des folgenden \emph{meta}--Tags in die \emph{head}--Sektion der Seite.
@@ -85,10 +81,10 @@ Sie abstrahieren die Gerätepixel zu logischen CSS-Pixeln, die beliebige Vielfac
 \end{verbatim}
 % @formatter:on
 
-Diese Maßnahme hat als Effekt, dass ein Web-Element auf jedem Gerät die gleiche physikalische Fläche einnimmt, egal welche Pixeldichte ein Gerät hat.
+Diese Maßnahme hat als Effekt, dass ein Web-Element auf jedem Gerät die gleiche physikalische Fläche einnimmt, egal welche Pixeldichte ein Gerät besitzt.
 Mit dem Problem der Pixeldichte gelöst, können nun weitere Maßnahmen für die verbesserte Unterstützung von RWD aufgeführt werden.
 
-Nach \autocite{Katajisto.CreatingSupportContent.2015} darf es auf einer Seite keine hartkodierte Layouts mit absoluten Positionen geben.
+Nach \autocite{Katajisto.CreatingSupportContent.2015} darf es auf einer Seite demnach keine hartkodierte Layouts mit absoluten Positionen geben.
 Jedes Web-Element muss auf die aktuelle Browserumgebung reagieren können.
 
 Es gibt nach Fernandez \autocite[S. 3]{MobileWebResponsiveWebdesign.Fernandez.2012} im Wesentlichen zwei relevante Schritte, bei denen Anpassungen am Layout vorgenommen werden müssen.
@@ -113,6 +109,20 @@ Jeder Media Query-Block stellt ein Segment zwischen zwei Breakpoints dar, wobei 
 \end{verbatim}
 % @formatter:on
 
-Innerhalb dieser Blöcke können Elemente auf zwei verschiedene Arten durch CSS mit Styles versehen werden.
-\emph{html, body{min-width:1333px}}
-\autocite{JiangResponsiveWebDesignModeAndApplication.2014}
+Diese Blöcke definiert, können Elemente nun innerhalb dieser über CSS mit Styles versehen werden.
+Eine für Entwickler einfache Methode ist nach \autocite{JiangResponsiveWebDesignModeAndApplication.2014} für jedes Breakpoint--Segment die Seitenbreite auf eine fixe Breite zu begrenzen.
+So kann mit der folgenden CSS-Klasse \emph{html, body \{min-width: 1333px\}} für Geräte die der Media Query \emph{max-width: 1333px} entsprechen ein Layout erzeugt werden, das sich bis zum nächsten niedrigeren oder höheren Breakpoint nicht verformt.
+
+Eine Alternative dazu ist es, die Seitenbreite zwischen Breakpoints nicht statisch zu machen.
+Dann werden die Media Queries ausschließlich dazu verwendet, die Anordnung, Größe oder Sichtbarkeit der eigentlichen Web--Elemente zu beeinflussen.
+\autocite[S. 33]{Laati.ImplementingResponsiveDesignInIndustrialDashboardEditor.2017} Bei solchen Layouts mit unbekannten Breiten dürfen selbstverständlich keine fixen Größen für Elemente und die Seite selbst vergeben werden, es müssen dynamische Größen wie \emph{\%}, \emph{vh} oder \emph{vw} verwendet werden.
+Diese Strategie erzeugt demnach durch die hier erforderliche Betrachtung jeder möglichen Seitenbreite in Pixeln jedoch einen größeren Entwicklungsaufwand.
+Ihre Nutzung ist es bei nicht--scrollenden Dashboardlayouts jedoch oft wert, da es immer einen Mangel an Bildschirmraum für die darzustellenden Informationen gibt und so keine Fläche durch einen Rahmen um die Seite verschenkt wird.
+
+% FIXME: Quelle zu getbootstrap.com
+Frameworks wie Bootstrap erlauben beide Strategien über vordefinierte CSS-Klassen (\emph{row}, \emph{col} und ihre Varianten).
+Diese setzen die maximale Breite einer Seite entweder statisch bei gewissen benannten Breakpoints über die oben genannte Strategie oder über ein \emph{flex}--Layout dynamisch für jede Bildschirmbreite.
+Die Größen von Elementen auf der Seite wird ebenfalls entsprechend automatisch angepasst.
+Zusammen mit anderen vordefinierten Klassen für die Gestaltung von Überschriften, Textelementen, Formularelementen und vielen weiteren erlaubt Bootstrap eine schnelle Entwicklung von Prototypen und produktionsfähigen Dashboards.
+
+\autocite[S. 72]{Harmsen.2018} Für fortgeschrittene Anpassungen mit größeren strukturellen Auswirkungen auf eine Seite oder Änderungen von Textinhalten ist das Einsetzen von JavaScript jedoch unerlässlich.
