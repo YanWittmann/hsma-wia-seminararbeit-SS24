@@ -1,0 +1,33 @@
+\section{Designkompromisse zwischen Bildschirmfläche und Informationsmenge}
+
+Die genannten Design Patterns und Prinzipien sind eine gute Grundlage für die Gestaltung von digitalen Dashboards.
+Jedoch gibt es oft unweigerliche High--Level Entscheidungen \autocite[S. 6]{Bach.DashboardDesignPatterns.2023}, auf die ein Entwickler nur wenig Einfluss hat, wie die Zielgruppe, die Gerätetypen und die Verwendungsszenarien in denen das Dashboard funktionieren muss.
+Darum müssen die Low--Level Entscheidungen von Designern das Beste aus dem verfügbaren Bildschirmraum, der Struktur, dem Layout, den verwendeten Darstellungsformen und den eigentlichen Inhalten machen.
+
+Effektiv bildet ein Dashboard einen großen Datenraum auf einen kleineren ab, dessen Größe von der verfügbaren Bildschirmgröße abhängt.
+Ein Entwickler muss nun also entscheiden, welche Informationen auf einem Dashboard nicht oder nur iteilweiseil gezeigt werden sollen.
+Die unterschiedlichen Metriken, die hierbei eine Rolle spielen sind der \emph{Bildschirmraum einer Seite}, die \emph{Anzahl der Seiten}, der \emph{Interaktionsgrad} und das \emph{Abstraktionsniveau der Informationen} \autocite[S. 6]{Bach.DashboardDesignPatterns.2023}.
+Die Herausforderung bei der Planung eines Dashboards besteht also darin, diese Metriken zu minimieren.
+In einer idealen Welt bräuchten alle Dashboards nur eine Seite, hätten keine Interaktionen und abstrahieren keine Informationen, so könnte ein Nutzer mit nur einem Blick auf das Dashboard alle relevanten Informationen erkennen, ohne mit ihm interagieren zu müssen.
+Allerdings sind all diese Ziele voneinander abhängig und können meist nicht gleichzeitig erreicht werden, weshalb Kompromisse gemacht werden müssen.
+
+Durch eine Reduktion des Bildschirmraums kann ein Dashboard also zwangsläufig nur eine niedrigere Informationsmenge führen.
+Damit Nutzer durch den Informationsverlust keine fehlerhaften Schlussfolgerungen ziehen, müssen Dashboardelemente angepasst werden.
+Nach \autocite[S. 463--464]{Kim.DesignPatternTradeOffs.2021} gibt es für die Anpassung von Diagrammen und anderen Visualisierungsoptionen mehrere Möglichkeiten:
+
+\begin{itemize}
+    \item Ganze \emph{Datensätze oder Datenfelder} können hinzugefügt, entfernt, ersetzt, aggregiert oder in mehrere aufgeteilt werden.
+    \item Die \emph{Darstellungsart} kann geändert werden, indem Achsen transponiert oder gänzlich andere visuelle Kodierungen verwendet werden.
+    \item Die \emph{Interaktionen} können durch alternative Ereignisse gesteuert oder Tooltips als eigenständige Elemente fixiert werden.
+    \item Das \emph{Narrativ} kann durch das Entfernen oder Hinzufügen von Hervorhebungen, das Aufteilen oder Entfernen von Panels, das Hinzufügen oder Umschalten von Anmerkungen sowie das Reduzieren von Text angepasst werden.
+    \item Die \emph{Referenz- und Layout-Elemente} können durch das Vereinfachen von Labels, das Kombinieren von Labels mit den eigentlichen Daten, Interaktionselemente ausklappbar statt immer sichtbar zu machen, sowie das Anpassen von Tick--Größen verbessert werden.
+\end{itemize}
+
+\autocite[S. 6]{Bach.DashboardDesignPatterns.2023}
+
+% old chapters:
+% \section{Wechselwirkungen zwischen Bildschirmgröße und Informationsmenge}
+% \subsection{Einfluss der Bildschirmgröße auf die Informationsdarstellung}
+% \subsection{Anpassungsstrategien für unterschiedliche Bildschirmgrößen}
+% or another one:
+% \subsection{Abwägungen zwischen Informationsdichte und Benutzerfreundlichkeit}
