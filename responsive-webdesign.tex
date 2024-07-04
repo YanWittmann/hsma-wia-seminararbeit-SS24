@@ -11,7 +11,7 @@ Eine ähnliche Erhebung von Statista \autocite{statista.DataReportal.WeAreSocial
 Mobilgeräte sind demnach heutzutage das primäre Mittel, um auf Inhalte im Internet zuzugreifen.
 Um zu zeigen, wie wichtig mobilgeräteorientierte Websites für Unternehmen heutzutage sind, führt \autocite[S. 25]{Harmsen.2018} die Umfrage "`What Users Want Most From Mobile Sites Today"' von Google \autocite{Google.WhatUsersWantFromMobile.2012} auf.
 Diese zeigt, dass 96\% der Internetnutzer auf Mobilgeräten bereits auf Websites navigiert haben, die nicht für mobile Geräte optimiert sind.
-Die Reaktionen auf solche unoptimierten Websites sind oft negativ: 48\% der Nutzer fühlen sich frustriert und suchen sofort nach einer alternativen Seite, und 52\% geben an, dass sie aufgrund dieser Erfahrung weniger wahrscheinlich mit dem betroffenen Unternehmen interagieren werden.
+Die Reaktionen auf solche unoptimierten Websites sind oft negativ: 48\% der Nutzer fühlen sich frustriert und suchen sofort nach einer alternativen Seite und 52\% geben an, dass sie aufgrund dieser Erfahrung weniger wahrscheinlich mit dem betroffenen Unternehmen interagieren werden.
 Eine schlechte Erfahrung für Mobilnutzer zu bieten birgt also für Unternehmen das reale Risiko, potentielle Kunden alleine durch ihre Online-Präsenz zu verlieren.
 
 Eine Website mobilfähig zu machen ist allerdings keine triviale Aufgabe.
@@ -43,8 +43,8 @@ In ihrer rohesten Form besuchen laut Gustafson \autocite[Kap. 1]{Gustafson.Adapt
 Navigation und Menüs sind prinzipiell für Nutzer uninteressant, solange diese grundlegend ihre Zwecke erfüllen.
 
 Mit dieser Erkenntnis stellt Katajisto \autocite[S. 4]{Katajisto.CreatingSupportContent.2015} Empfehlungen für die Herangehensweise an diese Aufgabe auf.
-Bevor die Implementierung einer Website beginnen kann, sollte eine Content-Strategie durch beteiligung aller Beteiligten (Entwickler, Content-Erzeuger, \ldots) entwickelt werden.
-Diese Strategie soll aus sog.\ Content-Modulen bestehen, atomare Inhaltssegmente, die von Entwicklern individuell gestaltet, auf einer Seite angeordnet und je nach Displaygröße modifiziert oder ausgeblendet werden können.
+Bevor die Implementierung einer Website beginnen kann, sollte eine Content--Strategie durch beteiligung aller Beteiligten (Entwickler, Content--Erzeuger, \ldots) entwickelt werden.
+Diese Strategie soll aus sog.\ Content--Modulen bestehen, atomare Inhaltssegmente, die von Entwicklern individuell gestaltet, auf einer Seite angeordnet und je nach Displaygröße modifiziert oder ausgeblendet werden können.
 
 Eine weitere, recht häufige Strategie ist "`Mobile First"' \autocite{Wroblewski.MobileFirst.2009} zu gestalten.
 Dieser Ansatz brint Entwickler dazu, sich zuerst auf die wichtigsten Inhalte zu konzentrieren, da unnötige und optionale Elemente auf Mobilgeräten mit kleinen Displays keinen Platz finden werden.
@@ -62,13 +62,13 @@ In Referenz zu den in der Planungsphase erstellten Content-Module können so Inh
 % flexible Layouts, Media Queries
 % CSS, JavaScript, Bootstrap
 
-Handys mit Auflösungen, die denen von großen Desktop-Monitoren gleichen, werden immer häufiger.
+Handys mit Auflösungen, die denen von großen Desktop--Monitoren gleichen, werden immer häufiger.
 Im Jahr 2017 wurde das erste kommerzielle Handy mit einer 4K-Auflösung (2160 × 3840 Pixel, 806 ppi Pixeldichte) veröffentlicht \autocite{Wikipedia.SonyXperiaZ5Premium.2024}.
 Diese Entwicklung hin zu größeren Pixeldichten führt nach \autocite{Harmsen.2018} dazu, dass die direkte Verwendung von Gerätepixeln als logische Pixel nicht mehr praktikabel ist, da die dargestellten Inhalte ansonsten viel zu klein wären, um von Nutzern lesbar zu sein.
-Um den Problemen durch die immer weiter wachsenden Displays entgegenzuwirken, wurde in Browsern die Einheit der \acs{CSS}-Pixel eingeführt.
-Sie abstrahieren die Gerätepixel zu logischen \acs{CSS}-Pixeln, die beliebige Vielfache eines Gerätepixels einnehmen können.
+Um den Problemen durch die immer weiter wachsenden Displays entgegenzuwirken, wurde in Browsern die Einheit der \acs{CSS}--Pixel eingeführt.
+Sie abstrahieren die Gerätepixel zu logischen \acs{CSS}--Pixeln, die beliebige Vielfache eines Gerätepixels einnehmen können.
 
-\autocite{JiangResponsiveWebDesignModeAndApplication.2014} führt als universelle und generell anwendbare Praxis für die automatische Erkennung der optimalen \acs{CSS}-Pixelskalierung mit minimalem Aufwand das Hinzufügen des folgenden \emph{meta}--Tags in die \emph{head}--Sektion der Seite.
+\autocite{JiangResponsiveWebDesignModeAndApplication.2014} führt als universelle und generell anwendbare Praxis für die automatische Erkennung der optimalen \acs{CSS}--Pixelskalierung mit minimalem Aufwand das Hinzufügen des folgenden \emph{meta}--Tags in die \emph{head}--Sektion der Seite.
 
 % @formatter:off
 \begin{verbatim}
@@ -78,26 +78,26 @@ Sie abstrahieren die Gerätepixel zu logischen \acs{CSS}-Pixeln, die beliebige V
 \end{verbatim}
 % @formatter:on
 
-Diese Maßnahme hat als Effekt, dass ein Web-Element auf jedem Gerät die gleiche physikalische Fläche einnimmt, egal welche Pixeldichte ein Gerät besitzt.
+Diese Maßnahme hat als Effekt, dass ein Web--Element auf jedem Gerät die gleiche physikalische Fläche einnimmt, egal welche Pixeldichte ein Gerät besitzt.
 Mit dem Problem der Pixeldichte gelöst, können nun weitere Maßnahmen für die verbesserte Unterstützung von \ac{RWD} aufgeführt werden.
 
 Nach \autocite{Katajisto.CreatingSupportContent.2015} darf es auf einer Seite demnach keine hartkodierte Layouts mit absoluten Positionen geben.
-Jedes Web-Element muss auf die aktuelle Browserumgebung reagieren können.
+Jedes Web--Element muss auf die aktuelle Browserumgebung reagieren können.
 
 Es gibt nach Fernandez \autocite[S. 3]{MobileWebResponsiveWebdesign.Fernandez.2012} im Wesentlichen zwei relevante Schritte, bei denen Anpassungen am Layout vorgenommen werden müssen.
 Der erste Schritt betrifft das Verhalten beim Überschreiten von sog.\ "`Breakpoints"'.
 Der zweite Schritt bezieht sich auf die Anpassung des Layouts zwischen diesen Breakpoints.
 
 Breakpoints sind definierte Displayauflösungen, die die große Menge an möglichen Auflösungen in einige wenige, überschaubare Segmente unterteilen.
-Die Auflösungen werden meist in der Horizontalen und in \acs{CSS}-Pixeln gemessen, sind also für alle Gerätearten durch den obigen meta--Tag normalisiert.
+Die Auflösungen werden meist in der Horizontalen und in \acs{CSS}--Pixeln gemessen, sind also für alle Gerätearten durch den obigen meta--Tag normalisiert.
 Zwischen diesen Breakpoints kann das Layout der Seite auf jeweils dieselbe Art und Weise behandelt werden, hier werden also dynamische Anpassungen mit minimalen Auswirkungen auf das Layout definiert.
 An den Breakpoints selbst muss das Layout jedoch wesentlich verändert werden, um weiterhin angemessen dargestellt zu werden.
 Sie müssen bei der initialen Problemanalyse gefunden werden und werden im weiteren Verlauf verwendet.
 
-Das Konzept der Breakpoint-Aufteilung lässt sich direkt über das Media Queries Modul von \ac{CSS} implementieren.
+Das Konzept der Breakpoint--Aufteilung lässt sich direkt über das Media Queries Modul von \ac{CSS} implementieren.
 \autocite{JiangResponsiveWebDesignModeAndApplication.2014}
-Media Queries erlauben Abfragen einer Vielzahl an Browser-Properties, von denen bei der dynamischen Anpassung von Seiten hauptsächlich die Erkennung der Seitenbreite benötigt wird.
-Jeder Media Query-Block stellt ein Segment zwischen zwei Breakpoints dar, wobei immer die obere und untere \acs{CSS}-Pixelgrenze in den \emph{max-width} und \emph{min-width}--Attributen des Blocks geführt wird.
+Media Queries erlauben Abfragen einer Vielzahl an Browser--Properties, von denen bei der dynamischen Anpassung von Seiten hauptsächlich die Erkennung der Seitenbreite benötigt wird.
+Jeder Media Query--Block stellt ein Segment zwischen zwei Breakpoints dar, wobei immer die obere und untere \acs{CSS}--Pixelgrenze in den \emph{max-width} und \emph{min-width}--Attributen des Blocks geführt wird.
 
 % @formatter:off
 \begin{verbatim}
@@ -108,7 +108,7 @@ Jeder Media Query-Block stellt ein Segment zwischen zwei Breakpoints dar, wobei 
 
 Diese Blöcke definiert, können Elemente nun innerhalb dieser über \ac{CSS} mit Styles versehen werden.
 Eine für Entwickler einfache Methode ist nach \autocite{JiangResponsiveWebDesignModeAndApplication.2014} für jedes Breakpoint--Segment die Seitenbreite auf eine fixe Breite zu begrenzen.
-So kann mit der folgenden \acs{CSS}-Klasse \emph{html, body \{min-width: 1333px\}} für Geräte die der Media Query \emph{max-width: 1333px} entsprechen ein Layout erzeugt werden, das sich bis zum nächsten niedrigeren oder höheren Breakpoint nicht verformt.
+So kann mit der folgenden \acs{CSS}--Klasse \emph{html, body \{min-width: 1333px\}} für Geräte die der Media Query \emph{max-width: 1333px} entsprechen ein Layout erzeugt werden, das sich bis zum nächsten niedrigeren oder höheren Breakpoint nicht verformt.
 
 Eine Alternative dazu ist es, die Seitenbreite zwischen Breakpoints nicht statisch zu machen.
 Dann werden die Media Queries ausschließlich dazu verwendet, die Anordnung, Größe oder Sichtbarkeit der eigentlichen Web--Elemente zu beeinflussen.
@@ -116,7 +116,7 @@ Dann werden die Media Queries ausschließlich dazu verwendet, die Anordnung, Gr�
 Diese Strategie erzeugt demnach durch die hier erforderliche Betrachtung jeder möglichen Seitenbreite in Pixeln jedoch einen größeren Entwicklungsaufwand.
 Ihre Nutzung ist es bei nicht--scrollenden Dashboardlayouts jedoch oft wert, da es immer einen Mangel an Bildschirmraum für die darzustellenden Informationen gibt und so keine Fläche durch einen Rahmen um die Seite verschenkt wird.
 
-Frameworks wie Bootstrap \autocite{Bootstrap.BuildResponsiveSites.2024} erlauben beide Strategien über vordefinierte \acs{CSS}-Klassen (\emph{row}, \emph{col} und ihre Varianten).
+Frameworks wie Bootstrap \autocite{Bootstrap.BuildResponsiveSites.2024} erlauben beide Strategien über vordefinierte \acs{CSS}--Klassen (\emph{row}, \emph{col} und ihre Varianten).
 Diese setzen die maximale Breite einer Seite entweder statisch bei gewissen benannten Breakpoints über die oben genannte Strategie oder über ein \emph{flex}--Layout dynamisch für jede Bildschirmbreite.
 Die Größen von Elementen auf der Seite wird ebenfalls entsprechend automatisch angepasst.
 Zusammen mit anderen vordefinierten Klassen für die Gestaltung von Überschriften, Textelementen, Formularelementen und vielen weiteren erlaubt Bootstrap eine schnelle Entwicklung von Prototypen und produktionsfähigen Dashboards.
